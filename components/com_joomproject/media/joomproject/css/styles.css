@@ -1,0 +1,277 @@
+#joomproject .border-left-dotted{
+	border-left: 2.5px dotted #dee2e6 !important;
+}
+
+#joomproject fieldset{
+	margin-bottom: 0px;
+}
+
+.status-indicator {
+	position: relative;
+	width: 12px;
+	height: 12px;
+	background-color: #4ade80;
+	border-radius: 50%;
+}
+
+.status-indicator::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #4ade80;
+	border-radius: 50%;
+	animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(3);
+		opacity: 0;
+	}
+}
+
+
+/* Joomproject Icons CSS */
+
+#joomproject .collapse{
+	overflow: visible;
+}
+
+/* Recent Activity (Activity Stream) */
+#joomproject .list-type span{
+	display: block;
+	padding: 4px 10px;
+	margin: 0 auto;
+	text-align: center;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	color: #FFF;
+	font-weight: bold;
+	text-shadow: 0 1px 1px #000;
+}
+#joomproject .type-comment{
+	background: blue;
+}
+#joomproject .type-file{
+	background: green;
+}
+#joomproject .type-milestone{
+	background: purple;
+}
+#joomproject .type-project{
+	background: black;
+}
+#joomproject .type-task{
+	background: red;
+}
+#joomproject .type-task-list{
+	background: orange;
+}
+
+/* Save Ordering buttons */
+#joomproject a.saveorder {
+	background: url("../images/filesave.png") no-repeat scroll 0 0 transparent;
+	display: block;
+	float: right;
+	height: 16px;
+	margin-right: 8px;
+	overflow: hidden;
+	width: 16px;
+}
+#joomproject a.saveorder.inactive {
+	background-position: 0 -16px;
+}
+#joomproject td.list-ordering span {
+	background-repeat: no-repeat;
+	float: left;
+	height: 13px;
+	text-align: center;
+	width: 20px;
+}
+#joomproject .jgrid span.uparrow {
+	background-image: url("../images/uparrow.png") no-repeat scroll 0 0 transparent;
+}
+#joomproject .jgrid span.downarrow {
+	background-image: url("../images/downarrow.png") no-repeat scroll 0 0 transparent;
+}
+
+/* Joomproject Layout CSS */
+
+/* Basic HTML */
+.hr-condensed{
+	margin: 5px 0;
+}
+
+
+#joomproject .inline-block{
+	display: inline-block;
+}
+
+/* Recent Activity Module (Activity Stream) */
+#joomproject .activity-list .list-type,
+#joomproject .activity-list .list-action,
+#joomproject .activity-list .list-owner,
+#joomproject .activity-list .list-time{
+	width: 15%;
+}
+
+/* Current Projects Module */
+#joomproject .project-list .list-milestones,
+#joomproject .project-list .list-tasks{
+	width: 5%;
+}
+
+/* Calendar Module */
+#joomproject .calendar-weekday,
+#joomproject .calendar-weekend{
+	width: 14.3%;
+	padding: 5px;
+}
+#joomproject .calendar-day{
+	height: 80px;
+}
+#joomproject .calendar-item{
+	white-space: nowrap;
+	font-size: 10px;
+	letter-spacing: -0.02em;
+	max-width: 100px;
+	overflow: hidden;
+}
+
+/* Table layout */
+#joomproject td.list-ordering input
+{
+	text-align: center;
+	width: 20px;
+	margin-right: 5px;
+}
+
+/* Project Grid Well */
+.well-projects{
+	padding: 5px;
+}
+
+/* Milestones */
+.milestone-edit{
+	margin-left: 4px;
+	margin-top: -2px;
+}
+.milestone-edit .dropdown-menu{
+	right:0;left:auto;
+}
+
+/* Tasks */
+.icon-move:hover{
+	cursor:hand;
+	cursor:grab;
+	cursor:-moz-grab;
+	cursor:-webkit-grab;
+}
+
+
+
+/* Dashboard */
+.view-dashboard .moduletable{
+	margin-bottom: 10px;
+}
+
+/* Users */
+.thumbnail.pull-left{
+	margin: 0 10px 10px 0;
+}
+.thumbnail.pull-right{
+	margin: 0 0 10px 10px;
+}
+
+/* Timesheet */
+.thumbnail-timesheet{
+	height: 90px;
+}
+/* Joomproject Theme CSS */
+
+/* Due Date Module */
+#joomproject .overdue {
+	color: red;
+}
+
+/* Calendar Module */
+#joomproject .today{
+	background: #FFFFCC;
+}
+#joomproject .calendar-weekend{
+	background: #EEE;
+}
+
+/* General Classes */
+.small{
+	font-size: 12px;
+}
+
+/* Bootstrap Classes */
+#joomproject .page-header{
+	padding-bottom: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/* Milestone Progress */
+.progress.progress-milestone{
+	margin-bottom: 0;
+}
+
+/* Topics */
+h3.topic-title {
+	margin-bottom: 10px;
+}
+#joomproject .border-dashed {
+	border-style: dashed;
+}
+#joomproject .border-width-1{
+	border-width: 1px;
+}
+#joomproject .border-width-2{
+	border-width: 2px;
+}
+#joomproject .border-width-3{
+	border-width: 3px;
+}
+#joomproject .border-color-gray{
+	border-color: #e3e3e3;
+}
+#joomproject .img-users{
+	width: 38px;
+	height: 38px;
+	line-height: 29px;
+	margin: 0px -4px;
+	border: 2px solid white;
+}
+
+#joomproject .img-users img{
+	width: 100%;
+	height: 100%;
+}
+
+#joomproject .childComment:before{
+	content: '';
+	width: 500px;
+	border-bottom: 2.5px dotted #dee2e6;
+	display: block;
+	position: absolute;
+	top: 26%;
+	left: -500px;
+}
+#joomproject .card-icon-floater{
+	position: absolute;
+	right: -15px;
+	bottom: -15px;
+	opacity: 0.1;
+}
+

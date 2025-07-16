@@ -1,0 +1,315 @@
+/**
+ * @package      JoomProject
+ *
+ * @author       JoomBoost
+ * @copyright    Copyright (C) 2012-2018 JoomBoost. All rights reserved.
+ * @license      http://www.gnu.org/licenses/gpl.html GNU/GPL, see LICENSE.txt
+ */
+
+
+/**
+ * A collection of form related functions
+ *
+ */
+var JPform =
+{
+    /**
+     * Function that dynamically reloads the specified form fields
+     *
+     * @param    string    fs    The form fields to reload (comma separated)
+     * @param    string    fi    The form ID (Optional)
+     * @param    string    fn    The form name (Optional)
+     */
+    reload: function(fs, fi, fn)
+    {
+        if (typeof fi == 'undefined') {
+            fi = 'item-form';
+        }
+
+        if (typeof fn == 'undefined') {
+            fn = 'jform';
+        }
+
+        // Get elements from string
+        var els = fs.split(',');
+
+        // Get the form
+        var f = jQuery('#' + fi);
+        var e = jQuery('#' + fn + '_elements', f);
+        var t = jQuery('input[name|="task"]', f);
+        var v = jQuery('input[name|="view"]', f).val();
+
+        // Set the value of the "elements" and "task" field
+        e.val(fs);
+        t.val(v + '.reload');
+
+        // Serialize the form
+        var d = f.serializeArray();
+
+        // Do the ajax request
+        jQuery.ajax(
+        {
+            url: f.attr('action'),
+            data: jQuery.param(d) + '&tmpl=component&format=json',
+            type: 'POST',
+            processData: true,
+            cache: false,
+            dataType: 'html',
+            success: function(resp)
+            {
+                if (Joomproject.isJsonString(resp) == false) {
+                    Joomproject.displayException(resp);
+                }
+                else {
+                    resp = jQuery.parseJSON(resp);
+
+                    if (resp.success == "true") {
+                        if (typeof resp.data != 'undefined') {
+                            for(var i = 0; i < els.length; i++)
+                            {
+                                var eln = jQuery.trim(els[i]);
+                                var elo = jQuery('#' + fn + '_' + eln + '_reload');
+                                var eld = resp.data[eln];
+
+                                if (elo.length > 0 && eld.length > 0) {
+                                    elo.empty();
+                                    elo.append(eld);
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            error: function(resp, e, msg)
+            {
+                Joomproject.displayMsg(resp, msg);
+            },
+            complete: function()
+            {
+                e.val('');
+                t.val('');
+            }
+        });
+    },
+
+
+    /**
+     * Function that shows or hides the access level select list
+     * depending on the selected access action
+     *
+     * @param    string    el    The access action list
+     * @param    string    fn    The form name (Optional)
+     */
+    accessAction: function(el, fn)
+    {
+        if (typeof fn == 'undefined') {
+            fn = 'jform';
+        }
+
+        if (typeof el == 'undefined') {
+            el = '#' + fn + '_access_action';
+        }
+
+        var a = jQuery('#' + fn + '_access_element');
+        var t = jQuery('#' + fn + '_access_title_element');
+
+        if (a.length > 0) {
+            if (jQuery(el).val() == '0') {
+                a.show();
+                t.hide();
+            }
+            else {
+                a.hide();
+                t.show();
+            }
+        }
+    },
+
+
+    /**
+     * Function for selecting a group when creating a new
+     * access level. This will also select all child groups
+     * and apply the disabled state.
+     *
+     * @param    string    el    The group checkbox that was clicked
+     */
+    accessGroupToggle: function(el)
+    {
+        var cb = jQuery(el);
+        var v  = cb.val();
+        var c  = jQuery('input.childof-' + v);
+        var l  = c.length;
+        var i  = 0;
+
+        if (cb.is(':checked')) {
+            // Force select all child groups
+            for(i = 0; i < l; i++)
+            {
+                var cbc = jQuery(c[i]);
+
+                if (cbc.length) {
+                    cbc.prop('checked', true);
+                    cbc.prop('disabled', true);
+                }
+            }
+        }
+        else {
+            // Release all child groups
+            for(i = 0; i < l; i++)
+            {
+                var cbc = jQuery(c[i]);
+
+                if (cbc.length) {
+                    cbc.prop('checked', false);
+                    cbc.prop('disabled', false);
+                }
+            }
+        }
+    },
+
+    radio2btngroup: function()
+    {
+        // Turn radios into btn-group
+        jQuery('.radio.btn-group label').addClass('btn');
+
+        jQuery('.btn-group label:not(.active)').click(function()
+        {
+            var label = jQuery(this);
+            var input = jQuery('#' + label.attr('for'));
+
+            if (!input.prop('checked')) {
+              label.closest('.btn-group').find('label').removeClass('active btn-success btn-danger btn-primary');
+
+              if (input.val()== '') {
+                  label.addClass('active btn-primary');
+              }
+              else if (input.val() == 0) {
+                  label.addClass('active btn-danger');
+              }
+              else {
+                  label.addClass('active btn-success');
+              }
+
+              input.prop('checked', true);
+          }
+      });
+
+      jQuery(".btn-group input[checked=checked]").each(function()
+      {
+          if (jQuery(this).val() == '') {
+              jQuery("label[for=" + jQuery(this).attr('id') + "]").addClass('active btn-primary');
+          }
+          else if (jQuery(this).val() == 0) {
+              jQuery("label[for=" + jQuery(this).attr('id') + "]").addClass('active btn-danger');
+          }
+          else {
+              jQuery("label[for=" + jQuery(this).attr('id') + "]").addClass('active btn-success');
+          }
+      });
+    },
+
+
+    alcmAddSelectedGroup: function(params)
+    {
+        var container = jQuery('#aclm-groups');
+        var sval      = jQuery('#aclm-add-group option:selected').val();
+        var stxt      = jQuery('#aclm-add-group option:selected').text();
+        var group     = jQuery('#alcm-group-' + sval, container);
+
+        let baseUrl = jQuery('input#baseUrl').val();
+
+        if (sval == '' || group.length > 0) return false;
+        if (jQuery('#alcm-add-group').hasClass('disabled')) return false;
+
+        jQuery('#alcm-add-group').addClass('disabled');
+        jQuery.ajax(
+        {
+            url: Joomla.getOptions('system.paths').base+'/index.php?option=com_jpusers&view=grouprules&id=' + sval + 'tmpl=component&format=raw&' + 'params',
+            data: 'option=com_jpusers&view=grouprules&id=' + sval + '&tmpl=component&format=raw&' + params,
+            type: 'POST',
+            processData: true,
+            cache: false,
+            dataType: 'html',
+            success: function(resp)
+            {
+                var d = jQuery(resp);
+
+                container.append(d);
+            },
+            error: function(resp, e, msg)
+            {
+                Joomproject.displayMsg(resp, msg);
+            },
+            complete: function()
+            {
+                jQuery('#alcm-add-group').removeClass('disabled');
+            }
+        });
+    },
+
+
+    alcmAddPredefinedGroups: function(gids, com, sec, inh, aid, pid, i)
+    {
+        let baseUrl = jQuery('input#baseUrl').val();
+
+        if (typeof i == 'undefined') i = 0;
+
+        var t = gids.length;
+
+        if (t == 0 || i >= t) return true;
+
+        var container = jQuery('#aclm-groups');
+        var params    = '&inherit=' + inh + '&component=' + com + '&section=' + sec + '&asset_id=' + aid + '&project_id=' + pid;
+        jQuery.ajax(
+        {
+            url: Joomla.getOptions('system.paths').base+'/index.php?option=com_jpusers&view=grouprules&id=' + gids[i] + 'tmpl=component&format=raw&' + params,
+            data: 'option=com_jpusers&view=grouprules&id=' + gids[i] + '&tmpl=component&format=raw&' + params,
+            type: 'POST',
+            processData: true,
+            cache: false,
+            dataType: 'html',
+            success: function(resp)
+            {
+                var d = jQuery(resp);
+
+                container.append(d);
+
+                i += 1;
+
+                JPform.alcmAddPredefinedGroups(gids, com, sec, inh, aid, pid, i);
+            },
+            error: function(resp, e, msg)
+            {
+                Joomproject.displayMsg(resp, msg);
+            }
+        });
+    },
+
+
+    alcmToggleActions: function(gid,elem)
+    {
+        var container = jQuery('#alcm-actions-' + gid);
+
+        var icon = jQuery(elem).find('i');
+
+        if(jQuery(icon).hasClass('fa-caret-up')){
+            jQuery(icon).toggleClass('fa-caret-square-up fa-caret-square-down')
+        }else{
+            jQuery(icon).toggleClass('fa-caret-square-down fa-caret-square-up')
+        }
+
+        if (container.css('display') == 'none') {
+            container.show();
+        }
+        else {
+            container.hide();
+        }
+    },
+
+
+    alcmRemoveGroup: function(gid)
+    {
+        jQuery('#alcm-group-' + gid).remove();
+    }
+}
+
