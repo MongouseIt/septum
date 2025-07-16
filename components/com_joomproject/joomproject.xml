@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_joomproject</name>
+    <author>JoomBoost</author>
+    <creationDate>02/01/2018</creationDate>
+    <copyright>(C) 2012 - 2019 JoomBoost. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>support@joomboost.com</authorEmail>
+    <authorUrl>www.joomboost.com</authorUrl>
+    <version>5.11.0</version>
+    <description>COM_JOOMPROJECT_XML_DESCRIPTION</description>
+    <scriptfile>script.php</scriptfile>
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <update>
+        <schemas>
+            <schemapath type="mysql">sql/updates/mysql</schemapath>
+        </schemas>
+    </update>
+    <files folder="site">
+        <folder>controllers</folder>
+        <folder>models</folder>
+        <folder>src</folder>
+        <folder>helpers</folder>
+        <folder>layouts</folder>
+        <folder>views</folder>
+        <filename>joomproject.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+    </files>
+    <languages folder="site">
+        <language tag="en-GB">language/en-GB/com_joomproject.ini</language>
+    </languages>
+    <administration>
+        <files folder="admin">
+            <folder>controllers</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>views</folder>
+            <folder>layouts</folder>
+            <folder>libraries</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <filename>config.xml</filename>
+            <filename>joomproject.php</filename>
+            <filename>controller.php</filename>
+            <filename>toolbar.xml</filename>
+        </files>
+        <languages folder="admin">
+            <language tag="en-GB">language/en-GB/com_joomproject.ini</language>
+            <language tag="en-GB">language/en-GB/com_joomproject.sys.ini</language>
+        </languages>
+        <menu>com_joomproject</menu>
+    </administration>
+
+    <media destination="com_joomproject" folder="media">
+        <folder>chosen</folder>
+        <folder>images</folder>
+        <folder>css</folder>
+        <folder>fontawesome</folder>
+        <folder>flot</folder>
+        <folder>jquery</folder>
+        <folder>js</folder>
+        <folder>joomproject</folder>
+        <folder>select2</folder>
+        <filename>joomla.asset.json</filename>
+    </media>
+
+    <dlid prefix="dlid=" suffix=""/>
+
+    <!-- Update server -->
+    <updateservers>
+        <server type="extension" priority="1" name="JoomProject Update">
+            <![CDATA[https://www.joomboost.com/index.php?option=com_mediastore&task=pluginTask&plugin=joomla&subtask=server&id=138&j=4]]>
+        </server>
+    </updateservers>
+
+</extension>
