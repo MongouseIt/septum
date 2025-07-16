@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset name="general" label="General">
+		<field name="global_access" type="accesslevel" label="Global Access" description="This global access level group that is allow you to view/access component, Note: don't use it if you want access level to be based on project level.">
+			<option value="">- Select access level -</option>
+		</field>
+	</fieldset>
+    <fieldset name="permissions" label="JCONFIG_PERMISSIONS_LABEL" description="JCONFIG_PERMISSIONS_DESC">
+		<field name="rules" type="rules"
+			label="JCONFIG_PERMISSIONS_LABEL"
+			class="inputbox" validate="rules" filter="rules"
+			component="com_jpforum" section="component"
+        />
+	</fieldset>
+</config>

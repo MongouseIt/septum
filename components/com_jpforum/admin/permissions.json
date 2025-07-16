@@ -1,0 +1,11 @@
+{
+  "task" : [
+    "view","create","edit","editown","deleteown","delete"
+  ],
+  "tasklist" : [
+    "view","create","edit","editown","deleteown","delete"
+  ],
+  "taskreminder" : [
+    "view","create","edit","editown","deleteown","delete"
+  ]
+}

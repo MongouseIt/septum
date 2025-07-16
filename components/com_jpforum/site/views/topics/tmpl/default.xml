@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_JPFORUM_TOPICS_VIEW_DEFAULT_TITLE" option="COM_JPFORUM_TOPICS_VIEW_DEFAULT_OPTION">
+		<message><![CDATA[COM_JPFORUM_TOPICS_VIEW_DEFAULT_DESC]]></message>
+	</layout>
+</metadata>
