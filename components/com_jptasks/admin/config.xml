@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fieldset name="general" label="COM_JPTASKS_CONFIG_GENERAL_LABEL" description="COM_JPTASKS_CONFIG_GENERAL_DESC">
+        <field name="enable_quicklogtime" layout="joomla.form.field.radio.switcher" type="radio" default="0"
+               label="COM_JPTASKS_CONFIG_ENABLE_QUICKLOGTIME">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="display_archived_tasks" layout="joomla.form.field.radio.switcher" type="radio" default="1"
+               label="Display Archived Tasks in Select list"
+               description="If set to yes, you will be able to see also archived tasks in tasks select list field on all forms">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="global_access" type="accesslevel" label="Global Access"
+               description="This global access level group that is allow you to view/access component, Note: don't use it if you want access level to be based on project level.">
+            <option value="">- Select access level -</option>
+        </field>
+
+    </fieldset>
+
+    <fieldset name="tasks_form" label="Task Form">
+
+        <field
+                name="enable_not_applicable"
+                type="radio"
+                label="COM_JPTASKS_ENABLE_NOT_APPLICABLE_LABEL"
+                description="COM_JPTASKS_ENABLE_NOT_APPLICABLE_DESC"
+                default="0"
+                layout="joomla.form.field.radio.switcher"
+        >
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+
+        <field name="tasklist_autochecking" type="radio" layout="joomla.form.field.radio.switcher" default="0"
+               label="Enable AutoCheckin">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+
+        <field name="use_default_dates" type="radio" layout="joomla.form.field.radio.switcher" default="0"
+               label="Use Default Dates"
+               description="If enabled, new tasks will be automatically set to current date with specified time range">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+
+        <field name="default_start_time" type="text"
+               default="08:00"
+               label="Default Start Time"
+               description="Set the default start time for new tasks (format HH:mm)"
+               showon="use_default_dates:1"
+        />
+
+        <field name="default_end_time" type="text"
+               default="18:00"
+               label="Default End Time"
+               description="Set the default end time for new tasks (format HH:mm)"
+               showon="use_default_dates:1"
+        />
+
+    </fieldset>
+
+    <fieldset name="timeline_automation" label="Timeline Automation" description="Settings for automatic timeline adjustments in projects, milestones, and tasks when task timeline changed.">
+
+        <fieldset name="posponed_task" label="When Task Postponed">
+            <field name="auto_adjust_deadlines" layout="joomla.form.field.radio.switcher" type="radio" default="0"
+                   label="Auto-adjust Deadlines"
+                   description="Automatically extends project and milestone end dates when dependent tasks are delayed. This ensures timeline consistency across your project hierarchy.">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+        </fieldset>
+
+    </fieldset>
+
+    <fieldset name="tasklists" label="Task Lists">
+
+        <fieldset name="tasklists_display" label="Display">
+
+            <field name="show_empty_tasklists"
+                   type="radio"
+                   default="0"
+                   label="Show Empty Task Lists"
+                   layout="joomla.form.field.radio.switcher"
+            >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+
+            <field name="show_total_tasks_tasklists"
+                   type="radio"
+                   default="0"
+                   label="Show Total Tasks on Tasklist header"
+                   layout="joomla.form.field.radio.switcher"
+            >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+
+            <field name="tasklist_color" type="color"
+                   default="#ffffff"
+                   description="COM_JPTASKS_CONFIG_TLIST_COLOR_DESC"
+                   label="COM_JPTASKS_CONFIG_TLIST_COLOR_LABEL"
+            />
+
+            <field name="tasklists_layout" type="list" default="cards" label="Layout">
+                <option value="cards">Cards</option>
+                <option value="accordions">Accordions</option>
+            </field>
+
+
+
+        </fieldset>
+
+        <fieldset name="tasklists_form" label="Form">
+            <field name="task_autochecking" type="radio" layout="joomla.form.field.radio.switcher" default="0"
+                   label="Enable AutoCheckin">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+        </fieldset>
+
+    </fieldset>
+
+    <fieldset name="tasks" label="Tasks">
+
+        <fieldset name="tasks_display" label="Display in list">
+
+            <field name="task_color" type="color"
+                   default="#ffffff"
+                   description="COM_JPTASKS_CONFIG_TASK_COLOR_DESC"
+                   label="COM_JPTASKS_CONFIG_TASK_COLOR_LABEL"
+            />
+
+            <field name="show_task_details" type="list" default="close" label="Show Task Details"
+                   description="Display or hide task details in tasks list view">
+                <option value="open">Show All</option>
+                <option value="close">Hide All</option>
+                <option value="hasComments">Only with comments</option>
+            </field>
+
+            <field name="show_task_id" type="list" default="0" label="Show Task ID" description="Display or hide task ID">
+                <option value="0">Hide</option>
+                <option value="1">On Task View</option>
+                <option value="2">On Tasks View</option>
+                <option value="3">On Both views</option>
+            </field>
+
+            <field name="task_desc_display" type="list" default="1" label="Task Description"
+                   description="Display or hide task description in tasks list view">
+                <option value="0">Hide</option>
+                <option value="1">One line with title</option>
+                <option value="2">Under title</option>
+            </field>
+
+            <field
+                    name="task_show_created_by"
+                    type="radio"
+                    label="Show Created By"
+                    description="Display or hide task creator in tasks list view"
+                    default="0"
+                    layout="joomla.form.field.radio.switcher"
+            >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+
+            <field
+                    name="task_show_modified_by"
+                    type="radio"
+                    label="Show Modified By"
+                    description="Display or hide last modifier in tasks list view"
+                    default="0"
+                    layout="joomla.form.field.radio.switcher"
+            >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+
+            <field
+                    name="task_show_completed_by"
+                    type="radio"
+                    label="Show Completed By"
+                    description="Display or hide task completer in tasks list view"
+                    default="0"
+                    layout="joomla.form.field.radio.switcher"
+            >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+
+            <field
+                    name="task_show_last_comment_by"
+                    type="radio"
+                    label="Show Last Comment By"
+                    description="Display or hide last commenter in tasks list view"
+                    default="0"
+                    layout="joomla.form.field.radio.switcher"
+            >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+
+        </fieldset>
+
+
+
+
+
+
+
+    </fieldset>
+
+
+    <fieldset name="email_notifications" label="Email Notifications">
+        <fieldset name="email_notifications_task" label="Task Notifications">
+            <field name="notify_assigned_users" type="radio" layout="joomla.form.field.radio.switcher" default="0"
+                   label="Send Notification to Assigned Users">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+        </fieldset>
+    </fieldset>
+    <fieldset name="email" label="COM_JPTASKS_CONFIGSET_EMAIL_LABEL">
+        <field type="spacer" label="COM_JPTASKS_CONFIG_FIELD_EMAIL_REMINDER"/>
+
+        <field
+                name="reminder_email_subject"
+                type="text"
+                size="60"
+                label="COM_JPTASKS_CONFIG_FIELD_EMAIL_REMINDER_SUBJECT_LABEL"
+                description="COM_JPTASKS_CONFIG_FIELD_EMAIL_REMINDER_SUBJECT_DESC"
+                default="Reminder of task : [task-name]"
+                labelclass="control-label"
+        />
+
+        <field
+                name="reminder_email_body"
+                type="editor"
+                cols="60"
+                rows="7"
+                label="COM_JPTASKS_CONFIG_FIELD_EMAIL_REMINDER_BODY_LABEL"
+                description="COM_JPTASKS_CONFIG_FIELD_EMAIL_REMINDER_BODY_DESC"
+                default="&lt;p&gt;[reminder-description]&lt;/p&gt;
+&lt;h3&gt;Task Information : &lt;/h3&gt;
+&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;In Project&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;[task-project]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;In Milestone&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;[task-milestone]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;In Task List&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;[task-list]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Start date&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;[task-startdate]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Deadline&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;[task-deadline]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Priority&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;[task-priority]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Estimated Time&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;[estimated-time]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Hourly Rate&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;[hourly-rate]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;"
+                filter="raw"
+                class="input-xxlarge"
+                labelclass="control-label"
+        />
+    </fieldset>
+
+    <fieldset name="permissions" label="JCONFIG_PERMISSIONS_LABEL" description="JCONFIG_PERMISSIONS_DESC">
+        <field name="rules" type="rules"
+               label="JCONFIG_PERMISSIONS_LABEL"
+               class="inputbox" validate="rules" filter="rules"
+               component="com_jptasks" section="component"
+        />
+    </fieldset>
+
+
+</config>

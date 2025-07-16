@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset addfieldpath="administrator/components/com_joomproject/models/fields">
+        <field name="project_id" type="project"
+            label="COM_JOOMPROJECT_FIELD_PROJECT_LABEL" description="COM_JOOMPROJECT_FIELD_PROJECT_DESC"
+            class=" form-control" size="30" required="true" view="tasklist"
+            onchange="JPform.reload('milestone_id,access,rules');"
+        />
+        <field name="milestone_id" type="milestone"
+            label="COM_JOOMPROJECT_FIELD_MILESTONE_LABEL" description="COM_JOOMPROJECT_FIELD_MILESTONE_DESC"
+            class=" form-control"
+            onchange="JPform.reload('access,rules');"
+        />
+        <field name="title" type="jptext"
+            label="JGLOBAL_TITLE"
+            class=" form-control" size="30" required="true"
+        />
+        <field name="description" type="editor"
+            label="COM_JOOMPROJECT_FIELD_DESCRIPTION_LABEL" description="COM_JOOMPROJECT_FIELD_DESCRIPTION_DESC"
+            class=" form-control" size="60" maxlength="255"
+        />
+        <field name="state" type="jplist"
+            label="JSTATUS" description="JFIELD_PUBLISHED_DESC"
+            class=" form-control" filter="intval" size="1" default="1"
+        >
+            <option value="1">JPUBLISHED</option>
+            <option value="0">JUNPUBLISHED</option>
+            <option value="2">JARCHIVED</option>
+            <option value="-2">JTRASHED</option>
+        </field>
+        <field name="created_by" type="jpuser"
+            label="COM_JOOMPROJECT_FIELD_CREATED_BY_LABEL" description="COM_JOOMPROJECT_FIELD_CREATED_BY_DESC"
+        />
+        <field name="modified" type="jpcalendar"
+            label="JGLOBAL_FIELD_MODIFIED_LABEL"
+            class="readonly" size="22" readonly="true" format="%Y-%m-%d %H:%M:%S" filter="user_utc"
+        />
+        <field name="modified_by" type="jpuser"
+            label="JGLOBAL_FIELD_MODIFIED_BY_LABEL"
+            class="readonly form-control" readonly="true" filter="unset"
+        />
+        <field name="rules" type="groupaccess"
+            component="com_jptasks" section="tasklist" inheritonly="true" filter="JPFormHelper::filterRules" validate="groupaccess"
+
+        />
+        <field name="id" type="hidden" readonly="true"/>
+        <field name="access" type="inheritaccess" hidden="true" readonly="true"/>
+        <field name="asset_id" type="hidden" filter="unset"/>
+        <field name="alias" type="hidden" readonly="true"/>
+        <field name="created" type="hidden" readonly="true"/>
+        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+        <field name="elements" type="hidden" />
+    </fieldset>
+</form>

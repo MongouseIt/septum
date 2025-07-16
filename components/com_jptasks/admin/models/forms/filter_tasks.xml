@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="filter">
+		<field
+			name="search"
+			type="text"
+			inputmode="search"
+			label="COM_JOOMPROJECT_FILTER_SEARCH_LABEL"
+			description="COM_JOOMPROJECT_FILTER_SEARCH_DESC"
+			hint="JSEARCH_FILTER"
+		/>
+
+		<field
+				name="published"
+				type="status"
+				label="JOPTION_SELECT_PUBLISHED"
+				onchange="this.form.submit();"
+		>
+			<option value="">JOPTION_SELECT_PUBLISHED</option>
+		</field>
+
+
+
+
+
+		<field
+			name="access"
+			type="accesslevel"
+			label="JGRID_HEADING_ACCESS"
+			hint="JOPTION_SELECT_ACCESS"
+			onchange="this.form.submit();"
+		>
+			<option value="">JOPTION_SELECT_ACCESS</option>
+		</field>
+		<field
+				name="priority"
+				type="list"
+				label=""
+				hint="JOPTION_SELECT_PRIORITY"
+				onchange="this.form.submit();"
+		>
+			<option value="0">JOPTION_SELECT_PRIORITY</option>
+			<option value="1">COM_JOOMPROJECT_PRIORITY_VERY_LOW</option>
+			<option value="2">COM_JOOMPROJECT_PRIORITY_LOW</option>
+			<option value="3">COM_JOOMPROJECT_PRIORITY_MEDIUM</option>
+			<option value="4">COM_JOOMPROJECT_PRIORITY_HIGH</option>
+			<option value="5">COM_JOOMPROJECT_PRIORITY_VERY_HIGH</option>
+
+		</field>
+		<field
+				name="complete"
+				type="list"
+				label=""
+				hint="JOPTION_SELECT_COMPLETITION"
+				onchange="this.form.submit();"
+		>
+			<option value="">JOPTION_SELECT_COMPLETITION</option>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+
+
+		</field>
+		<field
+				name="author_id"
+				type="author"
+				label="JOPTION_SELECT_AUTHOR"
+				hint="JOPTION_SELECT_AUTHOR"
+				onchange="this.form.submit();"
+		>
+			<option value="">JOPTION_SELECT_AUTHOR</option>
+			<option value="0">JNONE</option>
+		</field>
+		<field
+			name="assigned_id"
+			type="assigneduser"
+			label=""
+			hint="JOPTION_SELECT_ASSIGNED_USER"
+			onchange="this.form.submit();"
+			>
+			<option value="">JOPTION_SELECT_ASSIGNED_USER</option>
+		</field>
+
+		<field
+				name="milestone"
+				type="milestones"
+				label=""
+				hint="JOPTION_SELECT_MILESTONE"
+				onchange="this.form.submit();"
+		>
+			<option value="">JOPTION_SELECT_MILESTONE</option>
+		</field>
+
+		<field
+				name="tasklist"
+				type="tasks"
+				label=""
+				hint="JOPTION_SELECT_TASKLIST"
+				onchange="this.form.submit();"
+		>
+			<option value="0">JOPTION_SELECT_TASKLIST</option>
+		</field>
+
+
+
+
+	</fields>
+
+	<fields name="list">
+		<field
+				name="project_id"
+				type="projectid"
+				label=""
+				hint="JOPTION_SELECT_PROJECT"
+		/>
+
+		<field
+			name="fullordering"
+			type="list"
+			label="JGLOBAL_SORT_BY"
+			onchange="this.form.submit();"
+			default="a.id DESC"
+			validate="options"
+			>
+			<option value="">JGLOBAL_SORT_BY</option>
+			<option value="a.ordering ASC">JGRID_HEADING_ORDERING_ASC</option>
+			<option value="a.ordering DESC">JGRID_HEADING_ORDERING_DESC</option>
+			<option value="a.state ASC">JSTATUS_ASC</option>
+			<option value="a.state DESC">JSTATUS_DESC</option>
+			<option value="a.title ASC">JGLOBAL_TITLE_ASC</option>
+			<option value="a.title DESC">JGLOBAL_TITLE_DESC</option>
+			<option value="project_title ASC">JGRID_HEADING_PROJECT_ASC</option>
+			<option value="project_title DESC">JGRID_HEADING_PROJECT_DESC</option>
+			<option value="a.end_date ASC">JGRID_HEADING_DEADLINE_ASC</option>
+			<option value="a.end_date DESC">JGRID_HEADING_DEADLINE_DESC</option>
+			<option value="a.access_level ASC">JGRID_HEADING_ACCESS_ASC</option>
+			<option value="a.access_level DESC">JGRID_HEADING_ACCESS_DESC</option>
+			<option value="a.author_name ASC">JAUTHOR_ASC</option>
+			<option value="a.author_name DESC">JAUTHOR_DESC</option>
+			<option value="a.created ASC">JDATE_ASC</option>
+			<option value="a.created DESC">JDATE_DESC</option>
+			<option value="a.id ASC">JGRID_HEADING_ID_ASC</option>
+			<option value="a.id DESC">JGRID_HEADING_ID_DESC</option>
+		</field>
+
+		<field
+			name="limit"
+			type="limitbox"
+			label="JGLOBAL_LIST_LIMIT"
+			default="25"
+			onchange="this.form.submit();"
+		/>
+	</fields>
+</form>
