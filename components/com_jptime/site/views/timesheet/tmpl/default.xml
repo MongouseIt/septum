@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_JPTIME_TIMESHEET_VIEW_DEFAULT_TITLE" option="COM_JPTIME_TIMESHEET_VIEW_DEFAULT_OPTION">
+		<message><![CDATA[COM_JPTIME_TIMESHEET_VIEW_DEFAULT_DESC]]></message>
+	</layout>
+
+	<fields name="params">
+		<fieldset name="basic">
+
+
+			<field
+					name="predefined_date_range"
+					type="list"
+					label="COM_JOOMPROJECT_DEFAULT_PREDEFINED_DATE_RANGE"
+					default="7"
+			>
+				<option value="7">JNONE</option>
+				<option value="1">COM_JOOMPROJECT_OPTION_THIS_WEEK</option>
+				<option value="2">COM_JOOMPROJECT_OPTION_THIS_MONTH</option>
+				<option value="3">COM_JOOMPROJECT_OPTION_THIS_YEAR</option>
+				<option value="4">COM_JOOMPROJECT_OPTION_PREVIOUS_WEEK</option>
+				<option value="5">COM_JOOMPROJECT_OPTION_PREVIOUS_MONTH</option>
+				<option value="6">COM_JOOMPROJECT_OPTION_PREVIOUS_YEAR</option>
+			</field>
+
+			<field name="display_num" type="list" default="25" description="COM_JPPROJECTS_NUMBER_ITEMS_LIST_DESC" label="COM_JPPROJECTS_NUMBER_ITEMS_LIST_LABEL">
+				<option value="5">J5</option>
+				<option value="10">J10</option>
+				<option value="15">J15</option>
+				<option value="20">J20</option>
+				<option value="25">J25</option>
+				<option value="30">J30</option>
+				<option value="50">J50</option>
+				<option value="100">J100</option>
+				<option value="0">JALL</option>
+			</field>
+
+
+		</fieldset>
+
+	</fields>
+</metadata>
