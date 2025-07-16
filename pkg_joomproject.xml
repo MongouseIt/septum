@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="3.4" method="upgrade">
+    <name>JoomProject</name>
+    <packagename>joomproject</packagename>
+    <version>5.11.0</version>
+    <url>https://www.joomboost.com</url>
+    <creationDate>02/10/2018</creationDate>
+    <copyright>(C) 2012 - 2022 JoomBoost. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>support@joomboost.com</authorEmail>
+    <authorUrl>https://www.joomboost.com</authorUrl>
+    <author>JoomBoost</author>
+    <packager>Joomproject</packager>
+    <packagerurl>https://www.joomboost.com</packagerurl>
+    <description>JoomProject Full package</description>
+    <scriptfile>pkg_joomproject.script.php</scriptfile>
+    <blockChildUninstall>true</blockChildUninstall>
+    <files>
+        <!-- It is important that the library and com_joomproject are installed first -->
+        <file type="library" id="joomproject">libraries/joomproject</file>
+        <file type="component" id="com_joomproject">components/com_joomproject</file>
+
+        <!-- Install components -->
+        <file type="component" id="com_jpprojects">components/com_jpprojects</file>
+        <file type="component" id="com_jpmilestones">components/com_jpmilestones</file>
+        <file type="component" id="com_jptasks">components/com_jptasks</file>
+        <file type="component" id="com_jptime">components/com_jptime</file>
+        <file type="component" id="com_jprepo">components/com_jprepo</file>
+        <file type="component" id="com_jpforum">components/com_jpforum</file>
+        <file type="component" id="com_jpusers">components/com_jpusers</file>
+        <file type="component" id="com_jpdesigns">components/com_jpdesigns</file>
+        <file type="component" id="com_jpcomments">components/com_jpcomments</file>
+        <file type="component" id="com_jpreminders">components/com_jpreminders</file>
+        <file type="component" id="com_jpactivities">components/com_jpactivities</file>
+
+        <!-- Install plugins -->
+        <folder enable="1" type="plugin" id="jpcomments" group="content">plugins/plg_content_jpcomments</folder>
+        <folder enable="1" type="plugin" id="jpnotifications" group="content">plugins/plg_content_jpnotifications</folder>
+        <folder enable="1" type="plugin" id="jpprojects" group="content">plugins/plg_content_jpprojects</folder>
+        <folder enable="1" type="plugin" id="jpmilestones" group="content">plugins/plg_content_jpmilestones</folder>
+        <folder enable="1" type="plugin" id="jptasks" group="content">plugins/plg_content_jptasks</folder>
+        <folder enable="1" type="plugin" id="jptime" group="content">plugins/plg_content_jptime</folder>
+        <folder enable="1" type="plugin" id="jpforum" group="content">plugins/plg_content_jpforum</folder>
+        <folder enable="1" type="plugin" id="jpdesigns" group="content">plugins/plg_content_jpdesigns</folder>
+        <folder enable="1" type="plugin" id="jprepo" group="content">plugins/plg_content_jprepo</folder>
+        <folder enable="1" type="plugin" id="jpreminders" group="content">plugins/plg_content_jpreminders</folder>
+		<folder enable="1" type="plugin" id="joomproject" group="system">plugins/plg_system_joomproject</folder>
+        <folder enable="1" type="plugin" id="plg_content_jpactivities" group="content">plugins/plg_content_jpactivities</folder>
+        <folder enable="1" type="plugin" id="joomproject" group="jpactivities">plugins/plg_jpactivities_joomproject</folder>
+        <folder enable="0" type="plugin" id="plg_jpactivities_content" group="jpactivities">plugins/plg_jpactivities_content</folder>
+
+        <!-- Install modules -->
+        <file type="module" id="mod_jp_dash_buttons" client="site">modules/mod_jp_dash_buttons</file>
+        <file type="module" id="mod_jp_tasks" client="site">modules/mod_jp_tasks</file>
+        <file type="module" id="mod_jp_time" client="site">modules/mod_jp_time</file>
+        <file type="module" id="mod_jp_taskcounter" client="site">modules/mod_jp_taskcounter</file>
+        <file type="module" id="mod_jp_gantt" client="site">modules/mod_jp_gantt</file>
+        <file type="module" id="mod_jp_calendar" client="site">modules/mod_jp_calendar</file>
+        <file type="module" id="mod_jpactivities_site" client="site">modules/mod_jpactivities_site</file>
+        <file type="module" id="mod_jp_participants" client="site">modules/mod_jp_participants</file>
+        <file type="module" id="mod_jp_latest_comments" client="site">modules/mod_jp_latest_comments</file>
+    </files>
+
+</extension>
