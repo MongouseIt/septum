@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <layout title="COM_JPUSERS_USERS_VIEW_DEFAULT_TITLE" option="COM_JPUSERS_USERS_VIEW_DEFAULT_OPTION">
+        <message><![CDATA[COM_JPUSERS_USERS_VIEW_DEFAULT_DESC]]></message>
+    </layout>
+    <fields name="params">
+        <fieldset name="list" label="COM_JPUSERS_LIST_OPTIONS">
+            <field name="default_list_type" type="list" default="0" class="form-control" label="COM_JPUSERS_DEFAULT_LIST_TYPE_LABEL" description="COM_JPUSERS_DEFAULT_LIST_TYPE_DESC">
+                <option value="0">COM_JPUSERS_DEFAULT_LIST_TYPE_ALL</option>
+                <option value="1">COM_JPUSERS_DEFAULT_LIST_TYPE_SELECTED_GROUPS</option>
+                <option value="2">COM_JPUSERS_DEFAULT_LIST_TYPE_NO_USERS</option>
+            </field>
+            <field showon="default_list_type:1" name="include_selected_groups" type="usergrouplist" label="COM_JPUSERS_INCLUDE_GROUPS" multiple="true"/>
+        </fieldset>
+    </fields>
+</metadata>
