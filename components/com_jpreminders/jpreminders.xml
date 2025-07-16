@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="upgrade">
+    <name>COM_JPREMINDERS</name>
+    <author>JoomBoost</author>
+    <creationDate>29/05/2019</creationDate>
+    <copyright>(C) 2012 - 2019 JoomBoost. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>support@joomboost.com</authorEmail>
+    <authorUrl>www.joomboost.com</authorUrl>
+    <version>5.11.0</version>
+    <description>COM_JPREMINDERS_XML_DESCRIPTION</description>
+
+    <files folder="site">
+        <folder>controllers</folder>
+        <folder>models</folder>
+        <folder>views</folder>
+        <filename>jpreminders.php</filename>
+        <filename>controller.php</filename>
+    </files>
+
+    <languages folder="site">
+        <language tag="en-GB">language/en-GB/com_jpreminders.ini</language>
+    </languages>
+
+    <administration>
+        <files folder="admin">
+            <folder>controllers</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>jpreminders.php</filename>
+            <filename>controller.php</filename>
+        </files>
+
+        <languages folder="admin">
+            <language tag="en-GB">language/en-GB/com_jpreminders.ini</language>
+            <language tag="en-GB">language/en-GB/com_jpreminders.sys.ini</language>
+        </languages>
+
+        <menu>com_jpreminders</menu>
+
+    </administration>
+</extension>

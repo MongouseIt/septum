@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset addfieldpath="administrator/components/com_joomproject/models/fields">
+		<field
+				name="id"
+				type="number"
+				label="JGLOBAL_FIELD_ID_LABEL"
+				description="JGLOBAL_FIELD_ID_DESC"
+				class="readonly"
+				size="10"
+				default="0"
+				readonly="true"
+		/>
+
+		<field
+				name="description"
+				type="jptextarea"
+				label="COM_JPREMINDERS_FIELD_DECRIPTION_LABEL"
+				class=" form-control"
+				filter="\Joomla\CMS\Component\ComponentHelper::filterText"
+				buttons="true"
+				required="true"
+		/>
+
+		<field
+				name="assigned_users"
+				type="jpremindersusers"
+				label="COM_JPREMINDERS_FIELD_REFUSER_LABEL"
+				multiple="true"
+				class="multipleAuthors"
+		>
+		</field>
+
+
+		<field
+				name="start_date"
+				type="jpcalendar"
+				label="COM_JPREMINDERS_START_DATE_LABEL"
+				translateformat="true"
+				showtime="true"
+				default="NOW"
+				class="form-control"
+				size="22"
+				filter="user_utc"
+				validate="jpstartdate"
+				required="true"
+		/>
+		<field name="types"  class="form-control" type="jplist" default="1" required="true" label="COM_JPREMINDERS_TYPE_DATE_LABEL" >
+			<option value="">COM_JPREMINDERS_PLEASE_SELECT</option>
+			<option value="1">COM_JPREMINDERS_TYPE_DATE_HOUR</option>
+			<option value="2">COM_JPREMINDERS_TYPE_DATE_DAY</option>
+			<option value="3">COM_JPREMINDERS_TYPE_DATE_WEEK</option>
+			<option value="4">COM_JPREMINDERS_TYPE_DATE_MONTH</option>
+		</field>
+
+		<field
+				name="amount"
+				type="jpnumber"
+				label="COM_JPREMINDERS_EVERY_LABEL"
+				size="10"
+				default="1"
+				class="form-control"
+				validate="jpamount"
+				required="true"
+
+
+		/>
+
+		<field
+				name="repeats"
+				type="jpnumber"
+				label="COM_JPREMINDERS_NUMBER_REPEATS_LABEL"
+				size="10"
+				default="1"
+				class="form-control"
+				validate="jpnumber"
+				required="true"
+
+		/>
+
+
+		<field
+				name="created"
+				type="jpcalendar"
+				label="COM_JPREMINDERS_FIELD_CREATED_LABEL"
+				description="COM_JPREMINDERS_FIELD_CREATED_DESC"
+				translateformat="true"
+				showtime="true"
+				size="22"
+				filter="user_utc"
+				class=" form-control"
+		/>
+
+		<field
+				name="created_by"
+				type="jpuser"
+				label="COM_JPREMINDERS_FIELD_CREATED_BY_LABEL"
+				description="COM_JPREMINDERS_FIELD_CREATED_BY_DESC"
+				class=" form-control"
+		/>
+
+
+		<field
+				name="modified"
+				type="jpcalendar"
+				label="JGLOBAL_FIELD_MODIFIED_LABEL"
+				description="COM_CONTENT_FIELD_MODIFIED_DESC"
+				class="readonly form-control"
+				translateformat="true"
+				showtime="true"
+				size="22"
+				readonly="true"
+				filter="user_utc"
+
+		/>
+
+		<field
+				name="modified_by"
+				type="jpuser"
+				label="JGLOBAL_FIELD_MODIFIED_BY_LABEL"
+				class="readonly"
+				readonly="true"
+				filter="unset"
+		/>
+
+		<field
+				name="checked_out"
+				type="hidden"
+				filter="unset"
+		/>
+
+		<field
+				name="checked_out_time"
+				type="hidden"
+				filter="unset"
+		/>
+
+	</fieldset>
+
+
+
+</form>
