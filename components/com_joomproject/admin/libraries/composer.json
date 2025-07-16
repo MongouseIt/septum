@@ -1,0 +1,23 @@
+{
+  "name": "joomboost/joomproject",
+  "type": "library",
+  "version": "1.0",
+  "authors": [
+    {
+      "name": "JoomBoost",
+      "email": "support@joomboost.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "autoload": {
+    "classmap": [
+      "src/"
+    ],
+    "psr-4": {"JoomProject\\": "src/"}
+  },
+  "require": {
+    "php": ">=7.4",
+    "league/csv": "9.x",
+    "parsecsv/php-parsecsv": "1.*"
+  }
+}
