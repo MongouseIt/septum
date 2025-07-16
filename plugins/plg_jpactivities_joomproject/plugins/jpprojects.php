@@ -1,0 +1,173 @@
+<?php
+/**
+ * @package      plg_jpactivities_joomproject
+ *
+ * @author       JoomBoost
+ * @copyright    Copyright (C) 2018 JoomBoost. All rights reserved.
+ * @license      http://www.gnu.org/licenses/gpl.html GNU/GPL, see LICENSE.txt
+ */
+
+defined('_JEXEC') or die();
+
+use Joomla\CMS\Factory;
+
+
+class plgJPactivitiesJPprojects extends plgJPactivities
+{
+    /**
+     * Method to store user activity after a save event
+     *
+     * @param     string     $context    The item context
+     * @param     object     $table      The item table object
+     * @param     boolean    $is_new     New item indicator (True is new, False is update)
+     * @param     boolean    $store      Indicates whether to store the data or not
+     *
+     * @return    boolean                True on success, False on error
+     */
+    public function onJPactivitiesAfterSave($context, $table, $is_new, $store = true)
+    {
+        parent::onJPactivitiesAfterSave($context, $table, $is_new, false);
+
+        $this->item_data['xref_id'] = $table->id;
+
+        // Set meta data
+        $this->item_data['metadata']->set('cat_alias', '');
+        $this->item_data['metadata']->set('cat_title', '');
+
+        if ($table->catid) {
+            $cat = $this->getCategory($table->catid);
+
+            if ($cat) {
+                $this->item_data['metadata']->set('cat_alias', $cat->alias);
+                $this->item_data['metadata']->set('cat_title', $cat->title);
+            }
+        }
+
+        if ($store) return $this->save();
+
+        return true;
+    }
+
+
+    /**
+     * Method to store user activity after a delete event
+     *
+     * @param     string     $context    The item context
+     * @param     object     $table      The item table object
+     * @param     boolean    $store      Indicates whether to store the data or not
+     *
+     * @return    boolean                True on success, False on error
+     */
+    public function onJPactivitiesAfterDelete($context, $table, $store = true)
+    {
+        parent::onJPactivitiesAfterDelete($context, $table, false);
+
+        $this->item_data['xref_id'] = $table->id;
+
+        // Set meta data
+        $this->item_data['metadata']->set('cat_alias', '');
+        $this->item_data['metadata']->set('cat_title', '');
+
+        if ($table->catid) {
+            $cat = $this->getCategory($table->catid);
+
+            if ($cat) {
+                $this->item_data['metadata']->set('cat_alias', $cat->alias);
+                $this->item_data['metadata']->set('cat_title', $cat->title);
+            }
+        }
+
+        if ($store) return $this->save();
+
+        return true;
+    }
+
+
+    /**
+     * Method to set some of the activity data from the item id and state
+     *
+     * @param     integer    $id       The item id
+     * @param     integer    $state    The item state
+     *
+     * @return    void
+     */
+    protected function setDataFromItemState($id, $state)
+    {
+        parent::setDataFromItemState($id, $state);
+
+        // Get the item
+        $item = $this->getItem($id);
+        if (!$item) return false;
+
+        // Set the data
+        $this->item_data['title']      = $item->title;
+        $this->item_data['asset_id']   = $item->asset_id;
+        $this->item_data['xref_id']    = $id;
+        $this->item_data['access']     = $item->access;
+        $this->item_data['state']      = $item->state;
+        $this->activity_data['access'] = $item->access;
+
+        // Set meta data
+        $this->item_data['metadata']->set('alias', $item->alias);
+        $this->item_data['metadata']->set('cat_alias', $item->cat_alias);
+        $this->item_data['metadata']->set('cat_title', $item->cat_title);
+    }
+
+
+    /**
+     * Method to get a partial item record
+     *
+     * @param     integer    $id    The item id
+     *
+     * @return    object            The item record data
+     */
+    private function getItem($id)
+    {
+        static $cache = array();
+
+        // Check the cache
+        if (isset($cache[$id])) return $cache[$id];
+
+        $db    = Factory::getDbo();
+        $query = $db->getQuery(true);
+
+        $query->select('a.asset_id, a.catid, a.title, a.alias, a.state, a.access')
+              ->select('c.title AS cat_title, c.alias AS cat_alias')
+              ->from('#__jp_projects AS a')
+              ->join('left', '#__categories AS c ON c.id = a.catid')
+              ->where('a.id = ' . (int) $id);
+
+        $db->setQuery($query);
+        $cache[$id] = $db->loadObject();
+
+        return $cache[$id];
+    }
+
+
+    /**
+     * Method to get a category title and alias
+     *
+     * @param     integer    $id    The category id
+     *
+     * @return    object            The title and alias
+     */
+    private function getCategory($id)
+    {
+        static $cache = array();
+
+        // Check the cache
+        if (isset($cache[$id])) return $cache[$id];
+
+        $db    = Factory::getDbo();
+        $query = $db->getQuery(true);
+
+        $query->select('title, alias')
+              ->from('#__categories')
+              ->where('id = ' . (int) $id);
+
+        $db->setQuery($query);
+        $cache[$id] = $db->loadObject();
+
+        return $cache[$id];
+    }
+}

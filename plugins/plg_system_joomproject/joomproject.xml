@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="plugin" group="system" method="upgrade">
+	<name>System - JoomProject</name>
+    <author>JoomBoost</author>
+    <creationDate>05/28/2017</creationDate>
+    <authorEmail>support@joomboost.com</authorEmail>
+    <authorUrl>https://www.joomboost.com</authorUrl>
+    <copyright>2013-2017 JoomBoost</copyright>
+    <license>GNU/GPL, http://www.gnu.org/licenses/gpl-2.0.html</license>
+	<version>5.11.0</version>
+	<description>System plugin for JoomProject component, this plugin must be always enabled</description>
+	<files>
+		<filename plugin="joomproject">joomproject.php</filename>
+		<filename>index.html</filename>
+	</files>	
+</extension>

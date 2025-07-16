@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="content" method="upgrade">
+	<name>plg_content_jpnotifications</name>
+	<creationDate>02/12/2018</creationDate>
+	<author>JoomBoost</author>
+	<copyright>(C) 2012 - 2018 JoomBoost. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see	LICENSE.txt</license>
+	<authorEmail>support@joomboost.com</authorEmail>
+	<authorUrl>https://www.joomboost.com</authorUrl>
+	<version>5.11.0</version>
+	<description>PLG_CONTENT_JPNOTIFICATIONS_XML_DESCRIPTION</description>
+    <scriptfile>script.php</scriptfile>
+	<files>
+        <filename plugin="jpnotifications">jpnotifications.php</filename>
+        <filename>script.php</filename>
+        <filename>helper.php</filename>
+        <folder>cli</folder>
+	</files>
+    <languages>
+            <language tag="en-GB">language/en-GB/plg_content_jpnotifications.ini</language>
+            <language tag="en-GB">language/en-GB/plg_content_jpnotifications.sys.ini</language>
+    </languages>
+    <config>
+		<fields name="params">
+			<fieldset name="basic">
+                <field name="send_type"
+					type="list"
+                    class="btn-group"
+					default="0"
+					description="PLG_CONTENT_JPNOTIFICATIONS_FIELD_SEND_TYPE_DESC"
+					label="PLG_CONTENT_JPNOTIFICATIONS_FIELD_SEND_TYPE_LABEL"
+                >
+                    <option value="0">PLG_CONTENT_JPNOTIFICATIONS_FIELD_SEND_TYPE_NEW_AND_UPD</option>
+                    <option value="1">PLG_CONTENT_JPNOTIFICATIONS_FIELD_SEND_TYPE_NEW</option>
+                    <option value="2">PLG_CONTENT_JPNOTIFICATIONS_FIELD_SEND_TYPE_UPD</option>
+                </field>
+                <field name="sub_method"
+					type="radio"
+                    class="btn-group"
+					default="0"
+					description="PLG_CONTENT_JPNOTIFICATIONS_FIELD_SUB_METHOD_DESC"
+					label="PLG_CONTENT_JPNOTIFICATIONS_FIELD_SUB_METHOD_LABEL"
+                >
+                    <option value="0">PLG_CONTENT_JPNOTIFICATIONS_FIELD_SUB_METHOD_OPT_IN</option>
+                    <option value="1">PLG_CONTENT_JPNOTIFICATIONS_FIELD_SUB_METHOD_OPT_OUT</option>
+                </field>
+                <field name="send_method"
+					type="radio"
+                    class="btn-group"
+					default="0"
+					description="PLG_CONTENT_JPNOTIFICATIONS_FIELD_SEND_METHOD_DESC"
+					label="PLG_CONTENT_JPNOTIFICATIONS_FIELD_SEND_METHOD_LABEL"
+                >
+                    <option value="0">PLG_CONTENT_JPNOTIFICATIONS_FIELD_SEND_METHOD_DIRECT</option>
+                    <option value="1">PLG_CONTENT_JPNOTIFICATIONS_FIELD_SEND_METHOD_CRON</option>
+                </field>
+                <field type="text" name="cron_limit" default="20"
+                    size="10"
+                    class="input-small"
+                    label="PLG_CONTENT_JPNOTIFICATIONS_FIELD_CRON_LIMIT_LABEL"
+                    description="PLG_CONTENT_JPNOTIFICATIONS_FIELD_CRON_LIMIT_DESC"
+                />
+                <field name="projects_enabled" type="radio" class="btn-group" default="1" label="PLG_CONTENT_JPNOTIFICATIONS_FIELD_PROJECTS_ENABLED_LABEL">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="milestones_enabled" type="radio" class="btn-group" default="1" label="PLG_CONTENT_JPNOTIFICATIONS_FIELD_MILESTONES_ENABLED_LABEL">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="tasks_enabled" type="radio" class="btn-group" default="1" label="PLG_CONTENT_JPNOTIFICATIONS_FIELD_TASKS_ENABLED_LABEL">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="forum_enabled" type="radio" class="btn-group" default="1" label="PLG_CONTENT_JPNOTIFICATIONS_FIELD_FORUM_ENABLED_LABEL">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="repo_enabled" type="radio" class="btn-group" default="1" label="PLG_CONTENT_JPNOTIFICATIONS_FIELD_REPOSITORY_ENABLED_LABEL">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="designs_enabled" type="radio" class="btn-group" default="1" label="PLG_CONTENT_JPNOTIFICATIONS_FIELD_DESIGNS_ENABLED_LABEL">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+            </fieldset>
+        </fields>
+   </config>
+</extension>
