@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="com_joomproject_dashboard_view_default_title" option="com_joomproject_dashboard_view_default_option">
+		<help key = "JHELP_MENUS_MENU_ITEM_DASHBOARD_DEFAULT" />
+		<message><![CDATA[com_joomproject_dashboard_view_default_desc]]></message>
+	</layout>
+
+	<fields name="request">
+		<fieldset name="request"  addfieldpath="administrator/components/com_jpprojects/models/fields">
+			<field name="filter_project" type="project" description="Select active project by default or leave it empty." label="Select Active Project" required="false">
+				<option value="">JALL</option>
+			</field>
+		</fieldset>
+	</fields>
+
+
+</metadata>
