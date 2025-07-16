@@ -1,0 +1,1 @@
+ALTER TABLE `#__jp_projects` ADD `gallery_items` text DEFAULT NULL AFTER `description`;

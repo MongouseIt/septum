@@ -1,0 +1,1 @@
+ALTER TABLE `#__jp_designs` ADD `thumbnail` varchar(255) NOT NULL DEFAULT '' COMMENT 'The media custom thumbnail' AFTER `file_size`;

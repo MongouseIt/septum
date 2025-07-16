@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<toolbar>
+	<items>
+		<item component="joomproject">
+			<name>Dashboard</name>
+			<alias>dashboard</alias>
+			<link><![CDATA[index.php?option=com_joomproject&view=dashboard]]></link>
+		</item>
+		<item component="jpprojects">
+			<name>Projects</name>
+			<alias>projects</alias>
+			<link><![CDATA[index.php?option=com_jpprojects&view=projects]]></link>
+		</item>
+		<item component="jpmilestones">
+			<name>Milestones</name>
+			<alias>milestones</alias>
+			<link><![CDATA[index.php?option=com_jpmilestones&view=milestones]]></link>
+		</item>
+		<item component="jprepo">
+			<name>Repository</name>
+			<alias>repository</alias>
+			<link><![CDATA[index.php?option=com_jprepo&view=repository]]></link>
+		</item>
+		<item component="jptasks">
+			<name>Tasks</name>
+			<alias>tasks</alias>
+			<link><![CDATA[index.php?option=com_jptasks&view=tasks]]></link>
+		</item>
+		<item component="jptime">
+			<name>Time Tracking</name>
+			<alias>timetracking</alias>
+			<link><![CDATA[index.php?option=com_jptime&view=timesheet]]></link>
+		</item>
+		<item component="jpdesigns">
+			<name>Designs</name>
+			<alias>designs</alias>
+			<link><![CDATA[index.php?option=com_jpdesigns&view=designs]]></link>
+		</item>
+		<item component="jpforum">
+			<name>Forum</name>
+			<alias>upload</alias>
+			<link><![CDATA[index.php?option=com_jpforum&view=topics]]></link>
+		</item>
+		<item component="jpusers">
+			<name>Users</name>
+			<alias>account</alias>
+			<link><![CDATA[index.php?option=com_jpusers&view=users]]></link>
+		</item>
+		<item component="jpactivities">
+			<name>Activities</name>
+			<alias>activities</alias>
+			<link><![CDATA[index.php?option=com_jpactivities&view=activities]]></link>
+		</item>
+		<item component="jpreminders">
+			<name>Reminders</name>
+			<alias>reminders</alias>
+			<link><![CDATA[index.php?option=com_jpreminders&view=reminders]]></link>
+		</item>
+	</items>
+</toolbar>

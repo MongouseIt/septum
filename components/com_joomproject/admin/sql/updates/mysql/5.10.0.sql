@@ -1,0 +1,1 @@
+ALTER TABLE `#__jp_tasks` ADD COLUMN `not_applicable` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Task not applicable state' AFTER `priority`;

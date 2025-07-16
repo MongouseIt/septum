@@ -1,0 +1,1 @@
+ALTER TABLE `#__jp_timesheet` CHANGE `rate` `rate` DECIMAL(10,2) NOT NULL DEFAULT 0.00;

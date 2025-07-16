@@ -1,0 +1,1 @@
+ALTER TABLE `#__jp_reminders` MODIFY `description` TEXT;
