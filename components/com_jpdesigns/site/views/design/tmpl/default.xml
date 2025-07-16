@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_JPDESIGNS_DESIGN_VIEW_DEFAULT_TITLE" option="COM_JPDESIGNS_DESIGN_VIEW_DEFAULT_OPTION">
+		<message><![CDATA[COM_JPDESIGNS_DESIGN_VIEW_DEFAULT_DESC]]></message>
+	</layout>
+
+    <!-- Add fields to the request variables for the layout. -->
+	<fields name="request">
+		<fieldset name="request"
+			addfieldpath="/administrator/components/com_jpdesigns/models/fields">
+
+			<field name="id" type="modal_design"
+				label="COM_JPDESIGNS_FIELD_SELECT_DESIGN_LABEL"
+				required="true"
+				description="COM_JPDESIGNS_FIELD_SELECT_DESIGN_DESC"
+			/>
+		</fieldset>
+	</fields>
+
+    <!-- Add fields to the parameters object for the layout. -->
+    <fields name="params">
+        <fieldset name="design" label="COM_JPDESIGNS_DESIGN_ITEM_VIEW_OPTIONS">
+            <field name="show_recent" type="radio" class="btn-group"
+    			label="COM_JPDESIGNS_CONFIG_DESIGNS_SHOW_RECENT_LABEL" description="COM_JPDESIGNS_CONFIG_DESIGNS_SHOW_RECENT_DESC">
+    			<option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JNO</option>
+    			<option value="1">JYES</option>
+    		</field>
+            <field name="recent_limit" type="list" class="btn-group"
+    			label="COM_JPDESIGNS_CONFIG_DESIGNS_SHOW_RECENT_LIMIT_LABEL" description="COM_JPDESIGNS_CONFIG_DESIGNS_SHOW_RECENT_LIMIT_DESC">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+    			<option value="5">5</option>
+    			<option value="10">10</option>
+    			<option value="15">15</option>
+    			<option value="20">20</option>
+    			<option value="25">25</option>
+    		</field>
+            <field name="show_all" type="radio" class="btn-group"
+    			label="COM_JPDESIGNS_CONFIG_DESIGNS_SHOW_ALL_LABEL" description="COM_JPDESIGNS_CONFIG_DESIGNS_SHOW_ALL_DESC">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+    			<option value="0">JNO</option>
+    			<option value="1">JYES</option>
+    		</field>
+            <field name="show_all_visible" type="radio" class="btn-group"
+    			label="COM_JPDESIGNS_CONFIG_DESIGNS_SHOW_ALL_HIDDEN_LABEL" description="COM_JPDESIGNS_CONFIG_DESIGNS_SHOW_ALL_HIDDEN_DESC">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+    			<option value="0">COM_JPDESIGNS_CONFIG_DESIGNS_OPTION_HIDDEN</option>
+    			<option value="1">COM_JPDESIGNS_CONFIG_DESIGNS_OPTION_VISIBLE</option>
+    		</field>
+            <field name="show_all_row_limit" type="list" class="btn-group"
+    			label="COM_JPDESIGNS_CONFIG_DESIGNS_SHOW_ALL_LIMIT_LABEL" description="COM_JPDESIGNS_CONFIG_DESIGNS_SHOW_ALL_LIMIT_DESC">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="6">6</option>
+    			<option value="12">12</option>
+    		</field>
+        </fieldset>
+    </fields>
+
+</metadata>
