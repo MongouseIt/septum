@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "com_jpdesigns",
+  "version": "4.0.0",
+  "description": "JoomProject for Joomla CMS",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+    {
+      "name": "com_jpdesigns.zoom",
+      "type": "script",
+      "uri": "com_jpdesigns/zoom/jquery.zoom.min.js",
+      "dependencies": [
+        "jquery",
+        "jquery-noconflict"
+      ]
+    }
+
+  ]
+}
