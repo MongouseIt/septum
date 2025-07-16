@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_jpactivities</name>
+    <author>JoomBoost.com</author>
+    <creationDate>06/06/2018</creationDate>
+    <copyright>(C) 2013-2022 JoomBoost.com. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>support@joomboost.com</authorEmail>
+    <authorUrl>https://www.joomboost.com</authorUrl>
+    <version>5.11.0</version>
+    <description>COM_JPACTIVITIES_XML_DESCRIPTION</description>
+    <scriptfile>script.php</scriptfile>
+    <install folder="admin">
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install/mysql/structure.sql</file>
+        </sql>
+    </install>
+    <media folder="media" destination="com_jpactivities">
+        <folder>css</folder>
+        <folder>images</folder>
+        <folder>js</folder>
+        <folder>font</folder>
+        <filename>index.html</filename>
+    </media>
+    <files folder="site">
+        <folder>helpers</folder>
+        <folder>views</folder>
+        <filename>jpactivities.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <filename>index.html</filename>
+    </files>
+    <languages folder="site">
+        <language tag="en-GB">language/en-GB/com_jpactivities.ini</language>
+    </languages>
+    <administration>
+        <files folder="admin">
+            <folder>sql</folder>
+            <folder>controllers</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>jpactivities.php</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+        </files>
+        <languages folder="admin">
+            <language tag="en-GB">language/en-GB/com_jpactivities.ini</language>
+            <language tag="en-GB">language/en-GB/com_jpactivities.sys.ini</language>
+        </languages>
+        <menu>com_jpactivities</menu>
+    </administration>
+</extension>
