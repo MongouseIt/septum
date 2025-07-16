@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => 'joomboost/joomproject',
+        'pretty_version' => '1.0',
+        'version' => '1.0.0.0',
+        'reference' => null,
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
+    ),
+    'versions' => array(
+        'joomboost/joomproject' => array(
+            'pretty_version' => '1.0',
+            'version' => '1.0.0.0',
+            'reference' => null,
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'league/csv' => array(
+            'pretty_version' => '9.22.0',
+            'version' => '9.22.0.0',
+            'reference' => 'afc109aa11f3086b8be8dfffa04ac31480b36b76',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../league/csv',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'parsecsv/php-parsecsv' => array(
+            'pretty_version' => '1.3.2',
+            'version' => '1.3.2.0',
+            'reference' => '2d6236cae09133e0533d34ed45ba1e1ecafffebb',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../parsecsv/php-parsecsv',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);
