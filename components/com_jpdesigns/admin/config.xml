@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fieldset name="general" label="COM_JPDESIGNS_CONFIG_GENERAL_LABEL" description="COM_JPDESIGNS_CONFIG_GENERAL_DESC"
+        addfieldpath="administrator/components/com_jpdesigns/models/fields"
+    >
+
+        <field name="enable_custom_thumbnail" type="radio" class="btn-group" default="0"
+               label="COM_JPDESIGNS_CONFIG_ENABLE_CUSTOM_THUMBNAIL">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+
+        <field type="list" name="img_cover_size" default="770x300" class="input-medium"
+            label="COM_JPDESIGNS_CONFIG_IMG_COVER_SIZE_LABEL" description="COM_JPDESIGNS_CONFIG_IMG_COVER_SIZE_DESC"
+        >
+            <option value="570x100">570x100</option>
+            <option value="670x200">670x200</option>
+            <option value="770x300">770x300</option>
+            <option value="870x300">870x300</option>
+            <option value="970x300">970x300</option>
+        </field>
+        <field name="crop_img_cover" type="radio" class="btn-group" default="1"
+               label="COM_JPDESIGNS_CONFIG_SUPPORT_CROP_IMG_COVER_LABEL">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="quality_img_cover" type="number" default="85" min="40" max="100" step="1" label="COM_JPDESIGNS_CONFIG_SUPPORT_QUALITY_IMG_COVER_LABEL" />
+
+        <field type="list" name="img_preview_size" default="300x200" class="input-medium"
+               label="COM_JPDESIGNS_CONFIG_IMG_PREVIEW_SIZE_LABEL" description="COM_JPDESIGNS_CONFIG_IMG_PREVIEW_SIZE_DESC"
+        >
+            <option value="300x200">300x200</option>
+            <option value="360x270">360x270</option>
+            <option value="400x300">400x300</option>
+            <option value="460x370">460x370</option>
+        </field>
+
+        <field name="crop_img_preview" type="radio" class="btn-group" default="1"
+               label="COM_JPDESIGNS_CONFIG_SUPPORT_CROP_IMG_PREVIEW_LABEL">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+
+        <field name="quality_img_preview" type="number" default="85" min="40" max="100" step="1" label="COM_JPDESIGNS_CONFIG_SUPPORT_QUALITY_IMG_PREVIEW_LABEL" />
+
+        <field type="groupedlist" name="img_full_size" default="1280x720" class="input-medium"
+               label="COM_JPDESIGNS_CONFIG_IMG_FULL_SIZE_LABEL" description="COM_JPDESIGNS_CONFIG_IMG_FULL_SIZE_DESC"
+        >
+            <group label="4:3">
+                <option value="640x480">640x480</option>
+                <option value="800x600">800x600</option>
+                <option value="1024x768">1024x768</option>
+                <option value="1152x864">1152x864</option>
+                <option value="1400x1050">1400x1050</option>
+                <option value="1600x1200">1600x1200</option>
+            </group>
+            <group label="16:9">
+                <option value="640x360">640x360</option>
+                <option value="854x480">854x480</option>
+                <option value="960x540">960x540</option>
+                <option value="1024x576">1024x576</option>
+                <option value="1280x720">1280x720</option>
+                <option value="1366x768">1366x768</option>
+                <option value="1600x900">1600x900</option>
+                <option value="1920x1080">1600x900</option>
+            </group>
+            <group label="16:10">
+                <option value="1280x800">1280x800</option>
+                <option value="1440x900">1440x900</option>
+                <option value="1680x1050">1680x1050</option>
+                <option value="1920x1200">1920x1200</option>
+            </group>
+        </field>
+        <field name="quality_img_full" type="number" min="40" max="100" step="1"  default="95" label="COM_JPDESIGNS_CONFIG_SUPPORT_QUALITY_IMG_FULL_LABEL" />
+        <field name="support_pdf" type="radio" class="btn-group" default="0"
+               label="COM_JPDESIGNS_CONFIG_SUPPORT_PDF_LABEL" description="COM_JPDESIGNS_CONFIG_SUPPORT_PDF_DESC">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="watermark_txt" type="radio" class="btn-group" default="0"
+			label="COM_JPDESIGNS_CONFIG_WATERMARK_TXT_LABEL" description="COM_JPDESIGNS_CONFIG_WATERMARK_TXT_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+        <field type="list" name="watermark_txt_pos" default="bottom-right" class="input-medium"
+            label="COM_JPDESIGNS_CONFIG_WATERMARK_POS_LABEL" description="COM_JPDESIGNS_CONFIG_WATERMARK_POS_DESC"
+        >
+            <option value="top-left">COM_JPDESIGNS_CONFIG_WATERMARK_POS_TOP_LEFT</option>
+            <option value="top-right">COM_JPDESIGNS_CONFIG_WATERMARK_POS_TOP_RIGHT</option>
+            <option value="top-center">COM_JPDESIGNS_CONFIG_WATERMARK_POS_TOP_CENTER</option>
+            <option value="center">COM_JPDESIGNS_CONFIG_WATERMARK_POS_CENTER</option>
+            <option value="bottom-center">COM_JPDESIGNS_CONFIG_WATERMARK_POS_BOTTOM_CENTER</option>
+            <option value="bottom-left">COM_JPDESIGNS_CONFIG_WATERMARK_POS_BOTTOM_LEFT</option>
+            <option value="bottom-right">COM_JPDESIGNS_CONFIG_WATERMARK_POS_BOTTOM_RIGHT</option>
+        </field>
+        <field type="text" class="inputbox input-large" maxlength="64" name="watermark_string" default=""
+            label="COM_JPDESIGNS_CONFIG_WATERMARK_TXT_STRING_LABEL" description="COM_JPDESIGNS_CONFIG_WATERMARK_TXT_STRING_DESC"
+        />
+        <field type="list" name="approval_behavior" default="changeable"
+            label="COM_JPDESIGNS_CONFIG_APPROVAL_BEHAVIOR_LABEL" description="COM_JPDESIGNS_CONFIG_APPROVAL_BEHAVIOR_DESC"
+        >
+            <option value="changeable">COM_JPDESIGNS_CONFIG_APPROVAL_BEHAVIOR_CHANGEABLE</option>
+            <option value="final">COM_JPDESIGNS_CONFIG_APPROVAL_BEHAVIOR_FINAL</option>
+        </field>
+        <field type="designpath" name="design_basepath" default=""
+            label="COM_JPDESIGNS_CONFIG_DESIGN_BASEPATH_LABEL" description="COM_JPDESIGNS_CONFIG_DESIGN_BASEPATH_DESC"
+        />
+        <field type="memlimit" class="input-small" maxlength="4" name="raise_mem" default="0"
+            label="COM_JPDESIGNS_CONFIG_RAISE_MEM_LABEL" description="COM_JPDESIGNS_CONFIG_RAISE_MEM_DESC"
+        />
+        <field name="global_access" type="accesslevel" label="Global Access" description="This global access level group that is allow you to view/access component, Note: don't use it if you want access level to be based on project level.">
+            <option value="">- Select access level -</option>
+        </field>
+    </fieldset>
+    <fieldset name="albums" label="COM_JPDESIGNS_CONFIG_DESIGNS_ALBUMS" description="COM_JPDESIGNS_CONFIG_DESIGNS_ALBUMS_DESC">
+        <field name="album_row_limit" type="list" class="input-small" default="1"
+			label="COM_JPDESIGNS_CONFIG_DESIGNS_ALBUM_ROW_LIMIT_LABEL" description="COM_JPDESIGNS_CONFIG_DESIGNS_ALBUM_ROW_LIMIT_DESC">
+			<option value="1">1</option>
+            <option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+		</field>
+        <field name="album_row_items" type="list" class="input-small" default="6"
+			label="COM_JPDESIGNS_CONFIG_DESIGNS_ALBUM_ROW_ITEMS_LABEL" description="COM_JPDESIGNS_CONFIG_DESIGNS_ALBUM_ROW_ITEMS_DESC">
+            <option value="1">1</option>
+            <option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="6">6</option>
+		</field>
+        <field name="album_items_sort" type="list" class="input-small" default="2"
+			label="COM_JPDESIGNS_CONFIG_DESIGNS_ALBUM_ITEMS_SORT_LABEL" description="COM_JPDESIGNS_CONFIG_DESIGNS_ALBUM_ITEMS_SORT_DESC">
+            <option value="0">Ordering</option>
+            <option value="1">Oldest first</option>
+			<option value="2">Newest first</option>
+		</field>
+        <field name="album_row_fill" type="radio" class="btn-group" default="0"
+			label="COM_JPDESIGNS_CONFIG_DESIGNS_ROW_FILL_LABEL" description="COM_JPDESIGNS_CONFIG_DESIGNS_ROW_FILL_DESC">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+		</field>
+        <field name="album_row_upload" type="radio" class="btn-group" default="0"
+			label="COM_JPDESIGNS_CONFIG_DESIGNS_UPLOAD_LABEL" description="COM_JPDESIGNS_CONFIG_DESIGNS_UPLOAD_DESC">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+		</field>
+        <field name="show_album_desc" type="radio" class="btn-group" default="1"
+			label="COM_JPDESIGNS_CONFIG_ALBUM_DESC_LABEL" description="COM_JPDESIGNS_CONFIG_ALBUM_DESC_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+    </fieldset>
+    <fieldset name="designs" label="COM_JPDESIGNS_CONFIG_DESIGNS_OVERVIEW" description="COM_JPDESIGNS_CONFIG_DESIGNS_OVERVIEW_DESC">
+        <field name="designs_prev_img" type="list" default="0"
+			label="COM_JPDESIGNS_CONFIG_DESIGNS_PREVIEW_IMAGE_LABEL" description="COM_JPDESIGNS_CONFIG_DESIGNS_PREVIEW_IMAGE_DESC">
+			<option value="0">COM_JPDESIGNS_CONFIG_DESIGNS_PREVIEW_IMAGE_DESIGN</option>
+            <option value="1">COM_JPDESIGNS_CONFIG_DESIGNS_PREVIEW_IMAGE_REVISION</option>
+		</field>
+        <field name="designs_col_limit" type="list" class="input-small" default="2"
+			label="COM_JPDESIGNS_CONFIG_DESIGNS_PREVIEW_COL_LIMIT_LABEL" description="COM_JPDESIGNS_CONFIG_DESIGNS_PREVIEW_COL_LIMIT_DESC">
+			<option value="1">1</option>
+            <option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="6">6</option>
+		</field>
+        <field name="designs_col_upload" type="radio" class="btn-group" default="0"
+			label="COM_JPDESIGNS_CONFIG_DESIGNS_UPLOAD_LABEL" description="COM_JPDESIGNS_CONFIG_DESIGNS_UPLOAD_DESC">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+		</field>
+    </fieldset>
+    <fieldset name="design" label="COM_JPDESIGNS_CONFIG_DESIGN_ITEM_VIEW" description="COM_JPDESIGNS_CONFIG_DESIGN_ITEM_VIEW_DESC">
+        <field name="show_recent" type="radio" class="btn-group" default="1"
+			label="COM_JPDESIGNS_CONFIG_DESIGNS_SHOW_RECENT_LABEL" description="COM_JPDESIGNS_CONFIG_DESIGNS_SHOW_RECENT_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+        <field name="recent_limit" type="list" class="input-small" default="5"
+			label="COM_JPDESIGNS_CONFIG_DESIGNS_SHOW_RECENT_LIMIT_LABEL" description="COM_JPDESIGNS_CONFIG_DESIGNS_SHOW_RECENT_LIMIT_DESC">
+			<option value="5">5</option>
+			<option value="10">10</option>
+			<option value="15">15</option>
+			<option value="20">20</option>
+			<option value="25">25</option>
+		</field>
+        <field name="show_all" type="radio" class="btn-group" default="1"
+			label="COM_JPDESIGNS_CONFIG_DESIGNS_SHOW_ALL_LABEL" description="COM_JPDESIGNS_CONFIG_DESIGNS_SHOW_ALL_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+        <field name="show_all_visible" type="radio" class="btn-group" default="0"
+			label="COM_JPDESIGNS_CONFIG_DESIGNS_SHOW_ALL_HIDDEN_LABEL" description="COM_JPDESIGNS_CONFIG_DESIGNS_SHOW_ALL_HIDDEN_DESC">
+			<option value="0">COM_JPDESIGNS_CONFIG_DESIGNS_OPTION_HIDDEN</option>
+			<option value="1">COM_JPDESIGNS_CONFIG_DESIGNS_OPTION_VISIBLE</option>
+		</field>
+        <field name="show_all_row_limit" type="list" class="input-small" default="4"
+			label="COM_JPDESIGNS_CONFIG_DESIGNS_SHOW_ALL_LIMIT_LABEL" description="COM_JPDESIGNS_CONFIG_DESIGNS_SHOW_ALL_LIMIT_DESC">
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="6">6</option>
+			<option value="12">12</option>
+		</field>
+    </fieldset>
+    <fieldset name="permissions" label="JCONFIG_PERMISSIONS_LABEL" description="JCONFIG_PERMISSIONS_DESC">
+		<field name="rules" type="rules"
+			label="JCONFIG_PERMISSIONS_LABEL"
+			class="inputbox" validate="rules" filter="rules"
+			component="com_jpdesigns" section="component"
+        />
+	</fieldset>
+</config>

@@ -1,0 +1,18 @@
+{
+  "topic": [
+    "view",
+    "create",
+    "edit",
+    "editown",
+    "deleteown",
+    "delete"
+  ],
+  "reply": [
+    "view",
+    "create",
+    "edit",
+    "editown",
+    "deleteown",
+    "delete"
+  ]
+}
