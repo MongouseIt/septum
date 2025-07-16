@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset name="general" label="COM_JOOMPROJECT_CONFIG_GENERAL_LABEL" description="COM_JOOMPROJECT_CONFIG_GENERAL_DESC">
+		<field
+				name="enableDemo"
+				type="hidden"
+				default="0"
+				label=""
+		/>
+        <field type="text" name="date_format" class="form-control" label="COM_JOOMPROJECT_CONFIG_DATE_FORMAT_LABEL" description="JGLOBAL_DATE_FORMAT_DESC" default=""/>
+		<field name="relative_date"
+			   layout="joomla.form.field.radio.switcher" type="radio" default="1" label="Enable Relative Date Display">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field type="spacer" hr="true"/>
+        <field type="text" name="currency_code" class="form-control" label="COM_JOOMPROJECT_CONFIG_CURRENCY_CODE_LABEL" description="COM_JOOMPROJECT_CONFIG_CURRENCY_CODE_DESC" default="USD" maxlength="3" size="10"/>
+        <field type="text" name="currency_sign" class="form-control" label="COM_JOOMPROJECT_CONFIG_CURRENCY_SIGN_LABEL" description="COM_JOOMPROJECT_CONFIG_CURRENCY_SIGN_DESC" default="$" maxlength="2" size="10"/>
+        <field name="currency_position" type="radio" default="0" label="COM_JOOMPROJECT_CONFIG_CURRENCY_POS_LABEL" description="COM_JOOMPROJECT_CONFIG_CURRENCY_POS_DESC" class="form-control">
+		    <option value="0">COM_JOOMPROJECT_CONFIG_CURRENCY_POS_BEFORE_OPTION</option>
+			<option value="1">COM_JOOMPROJECT_CONFIG_CURRENCY_POS_AFTER_OPTION</option>
+		</field>
+        <field type="text" name="decimal_delimiter" class="form-control" label="COM_JOOMPROJECT_CONFIG_DECIMAL_DELIMITER_LABEL" description="COM_JOOMPROJECT_CONFIG_DECIMAL_DELIMITER_DESC" default="." maxlength="1" size="10"/>
+        <field type="text" name="thousands_delimiter" class="form-control" label="COM_JOOMPROJECT_CONFIG_THOUSANDS_DELIMITER_LABEL" description="COM_JOOMPROJECT_CONFIG_THOUSANDS_DELIMITER_DESC" default="," maxlength="1" size="10"/>
+
+		<field
+				name="style_field_layout"
+				type="list"
+				label="COM_JOOMPROJECT_CONFIG_FIELD_FIELD_STYLE"
+				default="0"
+		>
+			<option value="0">Default</option>
+			<option value="1">Table</option>
+			<option value="2">List in column</option>
+		</field>
+    </fieldset>
+	<fieldset name="form" label="COM_JOOMPROJECT_CONFIG_FORM_LABEL">
+		<field name="hide_root_category"
+			   layout="joomla.form.field.radio.switcher" type="radio" default="0" label="COM_JOOMPROJECT_CONFIG_HIDE_ROOT_CATEGORY_LABEL" description="COM_JOOMPROJECT_CONFIG_HIDE_ROOT_CATEGORY_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+	</fieldset>
+    <fieldset name="compat" label="COM_JOOMPROJECT_CONFIG_COMPAT_LABEL" description="COM_JOOMPROJECT_CONFIG_COMPAT_DESC">
+
+        <field name="user_profile_link" type="list" default="" label="COM_JOOMPROJECT_CONFIG_USER_PROFILE_LINK_LABEL" description="COM_JOOMPROJECT_CONFIG_USER_PROFILE_LINK_DESC">
+		    <option value="">Joomproject</option>
+            <option value="cb">Community Builder</option>
+			<option value="js">JomSocial</option>
+			<option value="kunena">Kunena</option>
+			<option value="osmembership">OS Membership</option>
+		</field>
+        <field name="user_profile_avatar" type="list" default="" label="COM_JOOMPROJECT_CONFIG_USER_PROFILE_AVATAR_LABEL" description="COM_JOOMPROJECT_CONFIG_USER_PROFILE_AVATAR_DESC">
+		    <option value="">Joomproject</option>
+            <option value="cb">Community Builder</option>
+            <option value="gravatar">Gravatar</option>
+			<option value="js">JomSocial</option>
+			<option value="kunena">Kunena</option>
+			<option value="mosets">Mosets</option>
+			<option value="osmembership">OS Membership</option>
+		</field>
+	</fieldset>
+	<fieldset name="display" label="COM_JOOMPROJECT_CONFIG_DISPLAY_LABEL" description="COM_JOOMPROJECT_CONFIG_DISPLAY_DESC">
+		<field name="force_bs"
+			   layout="joomla.form.field.radio.switcher" type="radio" default="0" label="Force Bootstrap Loading" description="Some templates doesn't load Joomla Bootstrap correctly, this option ensure Bootstrap is correctly loaded.">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="internal_main_nav"
+			   layout="joomla.form.field.radio.switcher" type="radio" default="1" label="COM_JOOMPROJECT_CONFIG_INTERNAL_MAIN_NAVIGATION_LABEL" description="COM_JOOMPROJECT_CONFIG_INTERNAL_MAIN_NAVIGATION_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="internal_project_nav" layout="joomla.form.field.radio.switcher" type="radio" default="1" label="COM_JOOMPROJECT_CONFIG_INTERNAL_PROJECT_NAV_LABEL" description="COM_JOOMPROJECT_CONFIG_INTERNAL_PROJECT_NAV_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="internal_project_nav_show_startend_dates" layout="joomla.form.field.radio.switcher" type="radio" default="1" label="Display Start/End Dates" description="Display start and end dates in internal project navigation" showon="internal_project_nav:1">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="fullscreen_mode"
+			   layout="joomla.form.field.radio.switcher" type="radio" default="0" label="COM_JOOMPROJECT_CONFIG_FULLSCREEN_MODE_LABEL" description="COM_JOOMPROJECT_CONFIG_FULLSCREEN_MODE_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field
+				name="force_template_theme"
+				type="templatestyle"
+				default=""
+				label="COM_JOOMPROJECT_CONFIG_TEMPLATE_THEME_LABEL"
+				description="COM_JOOMPROJECT_CONFIG_TEMPLATE_THEME_DESC"
+		>
+			<option value="">COM_JOOMPROJECT_SELECT_TEMPLATE_THEME</option>
+		</field>
+		<field name="joomproject_css" type="radio"
+			   layout="joomla.form.field.radio.switcher" default="1" label="COM_JOOMPROJECT_CONFIG_CSS_LABEL" description="COM_JOOMPROJECT_CONFIG_CSS_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+
+		<field name="prevent_form_resubmission"
+			   layout="joomla.form.field.radio.switcher" type="radio" default="0" label="Prevent Form Resubmission" description="Enable this feature to prevent the 'Confirm Form Resubmission' dialog when users navigate back after submitting a form. This improves user experience by avoiding unintended form resubmissions.">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+
+	</fieldset>
+
+
+</config>
