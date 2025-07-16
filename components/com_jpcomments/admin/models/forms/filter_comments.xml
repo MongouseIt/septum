@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="filter">
+        <field
+                name="search"
+                type="text"
+                inputmode="search"
+                label="COM_JOOMPROJECT_FILTER_SEARCH_LABEL"
+                description="COM_JOOMPROJECT_FILTER_SEARCH_DESC"
+                hint="JSEARCH_FILTER"
+        />
+        <field
+                name="published"
+                type="status"
+                label="JOPTION_SELECT_PUBLISHED"
+                onchange="this.form.submit();"
+        >
+            <option value="">JOPTION_SELECT_PUBLISHED</option>
+        </field>
+        <field
+                name="context"
+                type="contexts"
+                label=""
+                hint="JOPTION_SELECT_CONTEXT">
+        <option value="">JOPTION_SELECT_CONTEXT</option>
+        </field>
+        <field
+                name="item_id"
+                type="ContextItems"
+                label=""
+                hint="JOPTION_SELECT_CONTEXT_ITEM">
+            <option value="">JOPTION_SELECT_CONTEXT_ITEM</option>
+        </field>
+    </fields>
+
+    <fields name="list">
+        <field
+                name="fullordering"
+                type="list"
+                label="JGLOBAL_SORT_BY"
+                onchange="this.form.submit();"
+                default="a.id DESC"
+                validate="options"
+        >
+            <option value="">JGLOBAL_SORT_BY</option>
+            <option value="a.ordering ASC">JGRID_HEADING_ORDERING_ASC</option>
+            <option value="a.ordering DESC">JGRID_HEADING_ORDERING_DESC</option>
+            <option value="a.state ASC">JSTATUS_ASC</option>
+            <option value="a.state DESC">JSTATUS_DESC</option>
+            <option value="a.title ASC">JGLOBAL_TITLE_ASC</option>
+            <option value="a.title DESC">JGLOBAL_TITLE_DESC</option>
+            <option value="a.created_by ASC">JAUTHOR_ASC</option>
+            <option value="a.created_by DESC">JAUTHOR_DESC</option>
+            <option value="a.created ASC">JDATE_ASC</option>
+            <option value="a.created DESC">JDATE_DESC</option>
+            <option value="a.id ASC">JGRID_HEADING_ID_ASC</option>
+            <option value="a.id DESC">JGRID_HEADING_ID_DESC</option>
+        </field>
+
+        <field
+                name="limit"
+                type="limitbox"
+                label="JGLOBAL_LIST_LIMIT"
+                default="25"
+                onchange="this.form.submit();"
+        />
+    </fields>
+</form>
