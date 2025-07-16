@@ -1,0 +1,5 @@
+{
+  "milestone" : [
+    "view","create","edit","editown","deleteown","delete"
+  ]
+}

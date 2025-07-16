@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fieldset name="general" label="COM_JPMILESTONES_CONFIG_GENERAL_LABEL" description="COM_JPMILESTONES_CONFIG_GENERAL_DESC">
+        <field name="milestone_color" type="color"
+			default="#ffffff"
+			description="COM_JPMILESTONES_CONFIG_COLOR_DESC"
+			label="COM_JPMILESTONES_CONFIG_COLOR_LABEL"
+		/>
+		<field name="display_archived_milestones" class="btn-group" type="radio" default="1" label="Display Archived Milestones in Select list" description="If set to yes, you will be able to see also archived milestones in milestones select list field on all forms">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="global_access" type="accesslevel" label="Global Access" description="This global access level group that is allow you to view/access component, Note: don't use it if you want access level to be based on project level.">
+			<option value="">- Select access level -</option>
+		</field>
+	</fieldset>
+	<fieldset name="timeline_automation" label="Timeline Automation" description="Settings for automatic timeline adjustments in projects, milestones, and tasks when milestone timeline changed.">
+
+		<fieldset name="milestone_postponed" label="When Milestone Postponed">
+
+			<field
+					name="auto_extend_project"
+					type="radio"
+					label="Auto-extend Project"
+					description="When enabled, automatically extends project deadline when a milestone's end date is later than the current project deadline."
+					default="0"
+					layout="joomla.form.field.radio.switcher"
+			>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+
+			<field
+					name="auto_extend_tasks"
+					type="radio"
+					label="Auto-extend Tasks"
+					description="When enabled, automatically extends task end dates when milestone end date is postponed. Closed tasks will not be affected."
+					default="0"
+					layout="joomla.form.field.radio.switcher"
+			>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+
+		</fieldset>
+
+
+
+
+	</fieldset>
+    <fieldset name="permissions" label="JCONFIG_PERMISSIONS_LABEL" description="JCONFIG_PERMISSIONS_DESC">
+		<field name="rules" type="rules"
+			label="JCONFIG_PERMISSIONS_LABEL"
+			class="inputbox" validate="rules" filter="rules"
+			component="com_jpmilestones" section="component"
+        />
+	</fieldset>
+</config>
