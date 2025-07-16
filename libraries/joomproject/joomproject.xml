@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="library" method="upgrade" version="2.5">
+    <name>Joomproject</name>
+    <libraryname>joomproject</libraryname>
+    <author>JoomBoost</author>
+    <creationDate>02/12/2018</creationDate>
+    <copyright>Copyright (C) 2012 - 2018 JoomBoost. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later.</license>
+    <authorEmail>support@joomboost.com</authorEmail>
+    <authorUrl>https://www.joomboost.com</authorUrl>
+    <version>5.11.0</version>
+    <description>Shared classes and tools for JoomProject related components. Do not remove!</description>
+    <files>
+        <folder>access</folder>
+        <folder>application</folder>
+        <folder>controller</folder>
+        <folder>database</folder>
+        <folder>date</folder>
+        <folder>form</folder>
+        <folder>html</folder>
+        <folder>image</folder>
+        <folder>installer</folder>
+        <folder>menu</folder>
+        <folder>model</folder>
+        <folder>object</folder>
+        <folder>table</folder>
+        <folder>toolbar</folder>
+        <folder>user</folder>
+        <folder>version</folder>
+        <file>framework.php</file>
+        <file>library.php</file>
+        <file>joomproject.xml</file>
+    </files>
+</extension>
