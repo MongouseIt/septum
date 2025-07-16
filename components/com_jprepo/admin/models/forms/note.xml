@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset addfieldpath="administrator/components/com_joomproject/models/fields">
+        <field name="dir_id" type="repodir"
+            label="COM_JOOMPROJECT_FIELD_DIRECTORY_TITLE" description="COM_JOOMPROJECT_FIELD_DIRECTORY_DESC"
+            class=" form-control" required="true"
+        />
+        <field name="title" type="text"
+            label="JGLOBAL_TITLE"
+            class=" form-control" size="30" required="true" maxlength="56"
+        />
+        <field name="description" type="editor"
+            label="COM_JOOMPROJECT_FIELD_DESCRIPTION_LABEL" description="COM_JOOMPROJECT_FIELD_DESCRIPTION_DESC"
+            class=" form-control" buttons="true" filter="\Joomla\CMS\Component\ComponentHelper::filterText"
+        />
+        <field name="created_by" type="jpuser"
+            label="COM_JOOMPROJECT_FIELD_CREATED_BY_LABEL" description="COM_JOOMPROJECT_FIELD_CREATED_BY_DESC"
+        />
+        <field name="modified" type="jpcalendar"
+            label="JGLOBAL_FIELD_MODIFIED_LABEL"
+            class="readonly form-control" size="22" readonly="true" format="%Y-%m-%d %H:%M:%S" filter="user_utc"
+        />
+        <field name="modified_by" type="jpuser"
+            label="JGLOBAL_FIELD_MODIFIED_BY_LABEL"
+            class="readonly form-control" readonly="true" filter="unset"
+        />
+        <field name="labels" type="labels"
+            label="COM_JOOMPROJECT_FIELD_LABELS" description="COM_JOOMPROJECT_FIELD_LABELS_DESC"
+            asset="com_jprepo.note"
+        />
+        <field name="rules" type="groupaccess"
+            component="com_jprepo" section="note" inheritonly="true" filter="JPFormHelper::filterRules" validate="groupaccess"
+
+        />
+        <field name="id" type="hidden" readonly="true"/>
+        <field name="access" type="inheritaccess" hidden="true" readonly="true"/>
+        <field name="project_id" type="hidden" readonly="true"/>
+        <field name="asset_id" type="hidden" filter="unset"/>
+        <field name="elements" type="hidden"/>
+        <field name="created" type="hidden" readonly="true"/>
+        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+    </fieldset>
+</form>

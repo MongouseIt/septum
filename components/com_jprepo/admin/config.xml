@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fieldset name="general" label="COM_JPREPO_CONFIG_GENERAL_LABEL" description="COM_JPREPO_CONFIG_GENERAL_DESC"
+        addfieldpath="administrator/components/com_jprepo/models/fields"
+        >
+        <field type="repopath" name="repo_basepath" default=""
+            label="COM_JPREPO_CONFIG_REPO_BASEPATH_LABEL" description="COM_JPREPO_CONFIG_REPO_BASEPATH_DESC"
+        />
+        <field type="text" name="filter_ext" default=""
+            label="COM_JPREPO_CONFIG_FILTER_EXT_LABEL" description="COM_JPREPO_CONFIG_FILTER_EXT_DESC"
+        />
+        <field name="filter_ext_admin" type="radio" class="btn-group" default="0"
+			label="COM_REPO_CONFIG_FILTER_EXT_ADMIN_LABEL" description="COM_REPO_CONFIG_FILTER_EXT_ADMIN_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+        <field name="force_files_download" type="radio" class="btn-group" default="0"
+			label="Force Files download on browser" description="If set to yes, once user click on file will be downloaded on browser">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+
+        <field showon="force_files_download:1" type="text" name="force_files_download_extensions" default="pdf,docx,ppt,doc,txt"
+               label="Extensions allowed to force download"
+               description="Set here list of file extensions that will be forced for download on browser (comma seperated)"
+        />
+
+        <field name="global_access" type="accesslevel" label="Global Access" description="This global access level group that is allow you to view/access component, Note: don't use it if you want access level to be based on project level.">
+            <option value="">- Select access level -</option>
+        </field>
+
+    </fieldset>
+    <fieldset name="autocheckin" label="Auto Checkin">
+        <field name="note_autochecking" type="radio" class="btn-group" default="0"
+               label="Enable on Notes">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+    </fieldset>
+    <fieldset name="permissions" label="JCONFIG_PERMISSIONS_LABEL" description="JCONFIG_PERMISSIONS_DESC">
+        <field name="rules" type="rules"
+            label="JCONFIG_PERMISSIONS_LABEL"
+            class="inputbox" validate="rules" filter="rules"
+            component="com_jprepo" section="component"
+        />
+    </fieldset>
+</config>

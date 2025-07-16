@@ -1,0 +1,11 @@
+{
+  "file" : [
+    "view","create","edit","editown","deleteown","delete"
+  ],
+  "directory" : [
+    "view","create","edit","editown","deleteown","delete"
+  ],
+  "note" : [
+    "view","create","edit","editown","deleteown","delete"
+  ]
+}
