@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="upgrade">
+    <name>com_jpdesigns</name>
+    <author>JoomBoost</author>
+    <creationDate>02/01/2018</creationDate>
+    <copyright>(C) 2012 - 2018 JoomBoost. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>support@joomboost.com</authorEmail>
+    <authorUrl>www.joomboost.com</authorUrl>
+    <version>5.11.0</version>
+    <description>COM_JPDESIGNS_XML_DESCRIPTION</description>
+    <scriptfile>script.php</scriptfile> 
+    <files folder="site">
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>layouts</folder>
+        <folder>models</folder>
+        <folder>src</folder>
+        <folder>views</folder>
+        <filename>jpdesigns.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <filename>index.html</filename>
+    </files>
+    <administration>
+        <files folder="admin">
+            <folder>controllers</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>jpdesigns.php</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+        </files>
+        <languages folder="admin">
+            <language tag="en-GB">language/en-GB/com_jpdesigns.ini</language>
+            <language tag="en-GB">language/en-GB/com_jpdesigns.sys.ini</language>
+        </languages>
+        <menu>com_jpdesigns</menu>
+    </administration>
+    <media destination="com_jpdesigns" folder="media">
+        <filename>index.html</filename>
+        <folder>images</folder>
+        <folder>zoom</folder>
+        <filename>joomla.asset.json</filename>
+    </media>
+</extension>
