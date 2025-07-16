@@ -1,0 +1,340 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "com_joomproject",
+  "version": "4.0.0",
+  "description": "JoomProject for Joomla CMS",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+    {
+      "name": "com_joomproject.joomproject",
+      "type": "script",
+      "uri": "com_joomproject/joomproject/joomproject.js",
+      "dependencies": [
+        "jquery",
+        "jquery-noconflict",
+        "com_joomproject.iziModal"
+      ]
+    },
+    {
+      "name": "com_joomproject.tasklist.checkAll",
+      "type": "script",
+      "uri": "com_joomproject/tasklist.checkAll.js"
+    },
+    {
+      "name": "com_joomproject.list.resetFilterForm",
+      "type": "script",
+      "uri": "com_joomproject/list.resetFilterForm.js"
+    },
+    {
+      "name": "com_joomproject.fullscreen",
+      "type": "style",
+      "uri": "com_joomproject/joomproject/fullscreen.css"
+    },
+    {
+      "name": "com_joomproject.iziModal",
+      "type": "style",
+      "uri": "com_joomproject/joomproject/iziModal.min.css"
+    },
+    {
+      "name": "com_joomproject.iziModal",
+      "type": "script",
+      "uri": "com_joomproject/joomproject/iziModal.min.js",
+      "dependencies": [
+        "jquery",
+        "jquery-noconflict"
+      ]
+    },
+   
+    {
+      "name": "com_joomproject.moment",
+      "type": "script",
+      "uri": "com_joomproject/joomproject/moment.min.js",
+      "dependencies": [
+        "jquery",
+        "jquery-noconflict"
+      ]
+    },
+    {
+      "name": "com_joomproject.Chart",
+      "type": "script",
+      "uri": "com_joomproject/joomproject/Chart.min.js",
+      "dependencies": [
+        "com_joomproject.moment",
+        "com_joomproject.Chart.utils",
+        "com_joomproject.Chart.bundle"
+      ]
+    },
+    {
+      "name": "com_joomproject.Chart.utils",
+      "type": "script",
+      "uri": "com_joomproject/joomproject/Chart.utils.js"
+    },
+    {
+      "name": "com_joomproject.Chart.bundle",
+      "type": "script",
+      "uri": "com_joomproject/joomproject/Chart.bundle.min.js"
+    },
+    {
+      "name": "com_joomproject.Chart",
+      "type": "style",
+      "uri": "com_joomproject/Chart.min.css"
+    },
+    {
+      "name": "com_joomproject.menuBuilder",
+      "type": "script",
+      "uri": "com_joomproject/joomproject/menuBuilder.js",
+      "dependencies": [
+        "jquery",
+        "jquery-noconflict"
+      ]
+    },
+    {
+      "name": "com_joomproject.menuBuilder",
+      "type": "style",
+      "uri": "com_joomproject/joomproject/menuBuilder.css"
+    },
+    {
+      "name": "com_joomproject.form",
+      "type": "script",
+      "uri": "com_joomproject/joomproject/form.js",
+      "dependencies": [
+        "jquery",
+        "jquery-noconflict"
+      ]
+    },
+    {
+      "name": "com_joomproject.comments",
+      "type": "script",
+      "uri": "com_joomproject/joomproject/comments.js",
+      "dependencies": [
+        "jquery",
+        "jquery-noconflict"
+      ]
+    },
+    {
+      "name": "com_joomproject.jscolor",
+      "type": "script",
+      "uri": "com_joomproject/joomproject/jscolor.js"
+
+    },
+    {
+      "name": "com_joomproject.list",
+      "type": "script",
+      "uri": "com_joomproject/joomproject/list.js",
+      "dependencies": [
+        "jquery",
+        "jquery-noconflict"
+      ]
+    },
+    {
+      "name": "com_joomproject.quicklog",
+      "type": "script",
+      "uri": "com_joomproject/joomproject/quicklog.js",
+      "dependencies": [
+        "jquery",
+        "jquery-noconflict"
+      ]
+    },
+    {
+      "name": "com_joomproject.recorder",
+      "type": "script",
+      "uri": "com_joomproject/joomproject/recorder.js",
+      "dependencies": [
+        "jquery",
+        "jquery-noconflict",
+        "com_joomproject.list",
+        "com_joomproject.task"
+      ]
+    },
+    {
+      "name": "com_joomproject.swiper",
+      "type": "script",
+      "uri": "com_joomproject/joomproject/swiper.min.js",
+      "dependencies": [
+        "jquery",
+        "jquery-noconflict"
+      ]
+    },
+    {
+      "name": "com_joomproject.swiper",
+      "type": "style",
+      "uri": "com_joomproject/joomproject/swiper.css"
+    },
+    {
+      "name": "com_joomproject.task",
+      "type": "script",
+      "uri": "com_joomproject/joomproject/task.js",
+      "dependencies": [
+        "jquery",
+        "jquery-noconflict"
+      ]
+    },
+    {
+      "name": "com_joomproject.upload",
+      "type": "script",
+      "uri": "com_joomproject/joomproject/upload.js",
+      "dependencies": [
+        "jquery",
+        "jquery-noconflict"
+      ]
+    },
+    {
+      "name": "com_joomproject.ajax-upload",
+      "type": "style",
+      "uri": "com_joomproject/joomproject/ajax-upload.css"
+    },
+    {
+      "name": "com_joomproject.print",
+      "type": "style",
+      "uri": "com_joomproject/joomproject/print.css"
+    },
+    {
+      "name": "com_joomproject.styles",
+      "type": "style",
+      "uri": "com_joomproject/joomproject/styles.css"
+    },
+    {
+      "name": "com_joomproject.bootstrapextend",
+      "type": "style",
+      "uri": "com_joomproject/bootstrap/bootstrapextend.css"
+    },
+    {
+      "name": "com_joomproject.jquery.ui.core",
+      "type": "script",
+      "uri": "com_joomproject/jquery/jquery.ui.core.min.js",
+      "dependencies": [
+        "jquery",
+        "jquery-noconflict"
+      ]
+    },
+    {
+      "name": "com_joomproject.jquery.ui.sortable",
+      "type": "script",
+      "uri": "com_joomproject/jquery/jquery.ui.sortable.min.js",
+      "dependencies": [
+        "jquery",
+        "jquery-noconflict"
+      ]
+    },
+    {
+      "name": "com_joomproject.jquery-custom",
+      "type": "script",
+      "uri": "com_joomproject/jquery/jquery.min.js"
+    },
+    {
+      "name": "com_joomproject.jquery.noconflict-custom",
+      "type": "script",
+      "uri": "com_joomproject/jquery/jquery.noconflict.js"
+    },
+    {
+      "name": "com_joomproject.pdf.worker",
+      "type": "script",
+      "uri": "com_joomproject/pdf.worker.js",
+      "dependencies": [
+        "jquery",
+        "jquery-noconflict"
+      ]
+    },
+    {
+      "name": "com_joomproject.pdf",
+      "type": "script",
+      "uri": "com_joomproject/pdf.js",
+      "dependencies": [
+        "jquery",
+        "jquery-noconflict"
+      ]
+    },
+    {
+      "name": "com_joomproject.select2",
+      "type": "script",
+      "uri": "com_joomproject/select2/select2.min.js",
+      "dependencies": [
+        "jquery",
+        "jquery-noconflict"
+      ]
+    },
+    {
+      "name": "com_joomproject.select2",
+      "type": "style",
+      "uri": "com_joomproject/select2/select2.css"
+    },
+    {
+      "name": "com_joomproject.select2-bootstrap4",
+      "type": "style",
+      "uri": "com_joomproject/select2/select2-bootstrap4.css"
+    },
+    {
+      "name": "com_joomproject.float",
+      "type": "script",
+      "uri": "com_joomproject/flot/jquery.flot.min.js",
+      "dependencies": [
+        "jquery",
+        "jquery-noconflict"
+      ]
+    },
+    {
+      "name": "com_joomproject.flot-pie",
+      "type": "script",
+      "uri": "com_joomproject/flot/jquery.flot.pie.min.js",
+      "dependencies": [
+        "jquery",
+        "jquery-noconflict"
+      ]
+    },
+    {
+      "name": "com_joomproject.flot-resize",
+      "type": "script",
+      "uri": "com_joomproject/flot/jquery.flot.resize.min.js",
+      "dependencies": [
+        "jquery",
+        "jquery-noconflict"
+      ]
+    },
+    {
+      "name": "com_joomproject.manager",
+      "type": "script",
+      "uri": "com_joomproject/js/manager.js",
+      "dependencies": [
+        "jquery",
+        "jquery-noconflict"
+      ]
+    },
+    {
+      "name": "com_joomproject.gallery",
+      "type": "script",
+      "uri": "com_joomproject/js/gallery.js",
+      "dependencies": [
+        "jquery",
+        "jquery-noconflict"
+      ]
+    },
+    {
+      "name": "com_joomproject.manager_init",
+      "type": "script",
+      "uri": "com_joomproject/js/manager_init.js",
+      "dependencies": [
+        "jquery",
+        "jquery-noconflict"
+      ]
+    },
+    {
+      "name": "com_joomproject.justified",
+      "type": "script",
+      "uri": "com_joomproject/js/justified.js",
+      "dependencies": [
+        "jquery",
+        "jquery-noconflict"
+      ]
+    },
+    {
+      "name": "com_joomproject.gallerymanager",
+      "type": "style",
+      "uri": "com_joomproject/css/gallerymanager.css"
+    },
+    {
+      "name": "com_joomproject.gallery",
+      "type": "style",
+      "uri": "com_joomproject/css/gallery.css"
+    }
+  ]
+}
