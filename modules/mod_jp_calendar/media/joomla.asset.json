@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "mod_jp_calendar",
+  "version": "4.0.0",
+  "description": "JoomProject for Joomla CMS",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+    {
+      "name": "mod_jp_calendar.fullcalendar",
+      "type": "script",
+      "uri": "mod_jp_calendar/jquery.fn.fullcalendar.min.js",
+      "dependencies": [
+        "jquery"
+      ]
+    },
+
+    {
+      "name": "mod_jp_calendar.fullcalendar",
+      "type": "style",
+      "uri": "mod_jp_calendar/fullcalendar.css"
+    }
+  ]
+}

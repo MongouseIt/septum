@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+    <name>mod_jp_participants</name>
+    <author>JoomBoost</author>
+    <creationDate>05/29/2019</creationDate>
+    <copyright>Copyright (C) 2019 JoomBoost.com. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>support@joomboost.com</authorEmail>
+    <authorUrl>www.joomboost.com</authorUrl>
+    <version>5.11.0</version>
+    <description>MOD_JP_PARTICIPANTS_XML_DESCRIPTION</description>
+    <files>
+        <filename module="mod_jp_participants">mod_jp_participants.php</filename>
+        <filename>index.html</filename>
+        <folder>tmpl</folder>
+    </files>
+    <languages>
+        <language tag="en-GB">language/en-GB/mod_jp_participants.ini</language>
+        <language tag="en-GB">language/en-GB/mod_jp_participants.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic" addfieldpath="administrator/components/com_jpactivities/models/fields">
+                <field name="layout" type="list"
+                       label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC">
+                <option value="default">List</option>
+                <option value="carousel">Carousel</option>
+                 <option value="card">Card</option>
+                </field>
+                <field name="list_limit" type="text" default="10" class="inputbox input-small"
+                    label="MOD_JP_ASSIGNED_FIELD_LIST_LIMIT_LABEL" description="MOD_JP_ASSIGNED_FIELD_LIST_LIMIT_DESC"
+                />
+                <field name="mode" type="list" class="inputbox"
+                       label="MOD_JP_ASSIGNED_FIELD_MODE_LABEL"
+                       description="MOD_JP_ASSIGNED_FIELD_MODE_DESC"
+                       default="0"
+                >
+                    <option value="0">MOD_JP_ASSIGNED_FIELD_MODE_DYNAMIC</option>
+                    <option value="1">MOD_JP_ASSIGNED_FIELD_MODE_MANUAL</option>
+                </field>
+                <field type="project" name="project" default="" addfieldpath="administrator/components/com_jpprojects/models/fields"
+                       label="MOD_JP_ASSIGNED_FIELD_PROJECT_LABEL" description="MOD_JP_ASSIGNED_FIELD_PROJECT_DESC" showon="mode:1"/>
+
+                <field
+                        name="userType" type="list" default="0" filter="integer"
+                        label="MOD_JP_ASSIGNED_CONFIG_ASSIGNED_LABEL">
+                    <option value="0">MOD_JP_ASSIGNED_FIELD_OPTION_PARTICIPANTS</option>
+                    <option value="1">MOD_JP_ASSIGNED_FIELD_OPTION_ASSIGNED</option>
+
+                </field>
+
+
+            </fieldset>
+
+            <fieldset name="grid_settings">
+                <field
+                        name="xs_columns"
+                        type="list"
+                        default="12"
+                        label="MOD_JP_ASSIGNED_GRID_NUM_COLUMNS_XS_LABEL"
+                        description="MOD_JP_ASSIGNED_GRID_NUM_COLUMNS_XS_DESC"
+                        showon="layout:card"
+                >
+                    <option value="12">1</option>
+                    <option value="6">2</option>
+                    <option value="4">3</option>
+                    <option value="3">4</option>
+                    <option value="2">6</option>
+                </field>
+
+                <field
+                        name="sm_columns"
+                        type="list"
+                        default="6"
+                        label="MOD_JP_ASSIGNED_GRID_NUM_COLUMNS_SM_LABEL"
+                        description="MOD_JP_ASSIGNED_GRID_NUM_COLUMNS_SM_DESC"
+                        showon="layout:card"
+                >
+                    <option value="12">1</option>
+                    <option value="6">2</option>
+                    <option value="4">3</option>
+                    <option value="3">4</option>
+                    <option value="2">6</option>
+                </field>
+                <field
+                        name="md_columns"
+                        type="list"
+                        default="4"
+                        label="MOD_JP_ASSIGNED_GRID_NUM_COLUMNS_MD_LABEL"
+                        description="MOD_JP_ASSIGNED_GRID_NUM_COLUMNS_MD_DESC"
+                        showon="layout:card"
+                >
+                    <option value="12">1</option>
+                    <option value="6">2</option>
+                    <option value="4">3</option>
+                    <option value="3">4</option>
+                    <option value="2">6</option>
+                </field>
+                <field
+                        name="lg_columns"
+                        type="list"
+                        default="3"
+                        label="MOD_JP_ASSIGNED_GRID_NUM_COLUMNS_LG_LABEL"
+                        description="MOD_JP_ASSIGNED_GRID_NUM_COLUMNS_LG_DESC"
+                        showon="layout:card"
+                >
+                    <option value="12">1</option>
+                    <option value="6">2</option>
+                    <option value="4">3</option>
+                    <option value="3">4</option>
+                    <option value="2">6</option>
+                </field>
+                <field
+                        name="xl_columns"
+                        type="list"
+                        default="2"
+                        label="MOD_JP_ASSIGNED_GRID_NUM_COLUMNS_LG_LABEL"
+                        description="MOD_JP_ASSIGNED_GRID_NUM_COLUMNS_LG_DESC"
+                        showon="layout:card"
+                >
+                    <option value="12">1</option>
+                    <option value="6">2</option>
+                    <option value="4">3</option>
+                    <option value="3">4</option>
+                    <option value="2">6</option>
+                </field>
+            </fieldset>
+
+
+            <fieldset name="carousel" label="Carousel Settings">
+                <field
+                        name="effect"
+                        type="list"
+                        default="slide"
+                        label="MOD_JP_ASSIGNED_CAROUSEL_EFFECT_TRANSITION">
+                    <option	value="slide">Slide</option>
+                    <option	value="coverflow">Coverflow</option>
+                    <option	value="fade">Fade</option>
+                </field>
+                <field showon="effect!:fade" name="item1024" type="text" default="4" label="MOD_JP_ASSIGNED_CAROUSEL_ITEM_DESKTOP" description="MOD_JP_ASSIGNED_CAROUSEL_ITEM_DESKTOP_DESC" />
+                <field showon="effect!:fade" name="item768" type="text" default="3" label="MOD_JP_ASSIGNED_CAROUSEL_ITEM_TABLET" description="MOD_JP_ASSIGNED_CAROUSEL_ITEM_TABLET_DESC"  />
+                <field showon="effect!:fade" name="item480" type="text" default="1" label="MOD_JP_ASSIGNED_CAROUSEL_ITEM_MOBILE" description="MOD_JP_ASSIGNED_CAROUSEL_ITEM_MOBILE_DESC"/>
+
+                <field name="bar"
+                       type="radio" class="btn-group" default="pagination"
+                       label="MOD_JP_ASSIGNED_CAROUSEL_NAVIGATION_BAR"
+                       description=""
+                >
+                    <option value="0">None</option>
+                    <option value="1">Pagination</option>
+                    <option value="2">Scrollbar</option>
+                </field>
+
+                <field name="navbuttons"
+                       type="radio" class="btn-group" default="1"
+                       label="MOD_JP_ASSIGNED_CAROUSEL_NAV_BUTTONS"
+                       description=""
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="navbuttons_color"
+                       type="color" default=""
+                       label="MOD_JP_ASSIGNED_CAROUSEL_NAV_BUTTONS_COLOR"
+                       description=""
+                       showon="navbuttons:1"
+                />
+                <field
+                        name="nav_prev"
+                        type="text"
+                        default="❮"
+                        label="MOD_JP_ASSIGNED_CAROUSEL_PREV_LABEL"
+                        description="MOD_JP_ASSIGNED_CAROUSEL_PREV_DESC"
+                        showon="navbuttons:1"
+                />
+                <field
+                        name="nav_next"
+                        type="text"
+                        default="❯"
+                        label="MOD_JP_ASSIGNED_CAROUSEL_NEXT_LABEL"
+                        description="MOD_JP_ASSIGNED_CAROUSEL_NEXT_DESC"
+                        showon="navbuttons:1"
+                />
+                <field name="loop"
+                       type="radio" class="btn-group" default="true"
+                       label="MOD_JP_ASSIGNED_CAROUSEL_LOOP"
+                       description=""
+                >
+                    <option value="false">JNO</option>
+                    <option value="true">JYES</option>
+                </field>
+                <field name="loopblank"
+                       type="radio" class="btn-group" default="true"
+                       label="MOD_JP_ASSIGNED_CAROUSEL_LOOP_FILL_GROUP"
+                       description=""
+                >
+                    <option value="false">JNO</option>
+                    <option value="true">JYES</option>
+                </field>
+                <field name="grapcursor"
+                       type="radio" class="btn-group" default="true"
+                       label="MOD_JP_ASSIGNED_CAROUSEL_GRAB_CURSOR"
+                       description=""
+                >
+                    <option value="false">JNO</option>
+                    <option value="true">JYES</option>
+                </field>
+
+
+            </fieldset>
+            
+            <fieldset name="advanced">
+                <field name="moduleclass_sfx" type="text"
+                    label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+                />
+                <field name="cache" type="list" default="0"
+                    label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC"
+                >
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+                <field
+                    name="load_jquery" type="radio" default="1" class="btn-group"
+                    label="MOD_JP_ASSIGNED_CONFIG_LOAD_JQUERY_LABEL" description="MOD_JP_ASSIGNED_CONFIG_LOAD_JQUERY_DESC"
+                    >
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

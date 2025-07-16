@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>mod_jp_calendar</name>
+	<author>JoomBoost</author>
+	<creationDate>02/12/2018</creationDate>
+	<copyright>Copyright (C) 2018 JoomBoost. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later.</license>
+	<authorEmail>support@joomboost.com</authorEmail>
+	<authorUrl>https://www.joomboost.com</authorUrl>
+	<version>5.11.0</version>
+	<description>MOD_JP_CALENDAR_XML_DESCRIPTION</description>
+    <position>jp-dashboard-top</position>
+    <show_title>1</show_title>
+    <scriptfile>script.php</scriptfile>
+	<files>
+		<filename module="mod_jp_calendar">mod_jp_calendar.php</filename>
+		<folder>helpers</folder>
+        <folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename>script.php</filename>
+		<filename>mod_jp_calendar.xml</filename>
+
+	</files>
+	<languages>
+            <language tag="en-GB">language/en-GB/mod_jp_calendar.ini</language>
+            <language tag="en-GB">language/en-GB/mod_jp_calendar.sys.ini</language>
+	</languages>
+    <media destination="mod_jp_calendar" folder="media">
+        <folder>css</folder>
+        <folder>js</folder>
+		<filename>joomla.asset.json</filename>
+    </media>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="mode" type="list" class="inputbox"
+				    label="MOD_JP_CALENDAR_FIELD_MODE_LABEL"
+				    description="MOD_JP_CALENDAR_FIELD_MODE_DESC"
+				    default="0"
+			    >
+				    <option value="0">MOD_JP_CALENDAR_FIELD_MODE_DYNAMIC</option>
+				    <option value="1">MOD_JP_CALENDAR_FIELD_MODE_MANUAL</option>
+		        </field>
+                <field type="project" name="project" default="" addfieldpath="administrator/components/com_jpprojects/models/fields"
+                    label="MOD_JP_CALENDAR_FIELD_PROJECT_LABEL" description="MOD_JP_CALENDAR_FIELD_PROJECT_DESC"
+                />
+                <field name="week_start" type="list" class="inputbox"
+				    label="MOD_JP_CALENDAR_FIELD_WEEK_START_LABEL"
+				    description="MOD_JP_CALENDAR_FIELD_WEEK_START_DESC"
+				    default="1"
+			    >
+				    <option value="0">SUNDAY</option>
+                    <option value="1">MONDAY</option>
+		        </field>
+                <field type="text" name="aspect_ratio"
+                    label="MOD_JP_CALENDAR_FIELD_ASPECT_RATIO_LABEL" description="MOD_JP_CALENDAR_FIELD_ASPECT_RATIO_DESC"
+                    default="1.35"
+                    size="10"
+                    class="input-small"
+                />
+                <field name="truncate" type="text"
+    				class="input-small"
+    				default="0"
+    				label="MOD_JP_CALENDAR_FIELD_SHORTEN_TITLE_LABEL"
+    				description="MOD_JP_CALENDAR_FIELD_SHORTEN_TITLE_DESC"
+                />
+            </fieldset>
+            <fieldset name="jp_calendar_overview" description="COM_MODULES_JP_CALENDAR_OVERVIEW_FIELDSET_DESC">
+
+
+                <field name="filter_project_author" type="radio"
+    				class="btn-group"
+    				default="0"
+    				label="MOD_JP_CALENDAR_FIELD_FILTER_PROJECT_AUTHOR_LABEL"
+    				description="MOD_JP_CALENDAR_FIELD_FILTER_PROJECT_AUTHOR_DESC"
+                >
+    				<option value="0">JNO</option>
+    				<option value="1">JYES</option>
+    			</field>
+                <field name="filter_project_complete" type="radio"
+    				class="btn-group"
+    				default="1"
+    				label="MOD_JP_CALENDAR_FIELD_FILTER_PROJECT_COMPLETE_LABEL"
+    				description="MOD_JP_CALENDAR_FIELD_FILTER_PROJECT_COMPLETE_DESC"
+                >
+    				<option value="0">JNO</option>
+    				<option value="1">JYES</option>
+    			</field>
+                <field name="project_display" type="list"
+    				default="0"
+    				label="MOD_JP_CALENDAR_FIELD_PROJECT_DISPLAY_LABEL"
+    				description="MOD_JP_CALENDAR_FIELD_PROJECT_DISPLAY_DESC"
+                >
+    				<option value="0">MOD_JP_CALENDAR_OPTION_DISPLAY_DEADLINE</option>
+    				<option value="1">MOD_JP_CALENDAR_OPTION_DISPLAY_START_AND_DEADLINE</option>
+    				<option value="2">MOD_JP_CALENDAR_OPTION_DISPLAY_SPAN</option>
+    			</field>
+            </fieldset>
+            <fieldset name="jp_calendar_detail" description="COM_MODULES_JP_CALENDAR_DETAIL_FIELDSET_DESC">
+
+				<field name="event_title_truncate" type="text"
+					   class="input-small"
+					   default="25"
+					   label="MOD_JP_CALENDAR_FIELD_EVENT_TITLE_TRUNCATE_LABEL"
+					   description="MOD_JP_CALENDAR_FIELD_EVENT_TITLE_TRUNCATE_DESC"
+				/>
+
+                <field name="show_milestones" type="list" multiple="true"
+    				default=""
+    				label="MOD_JP_CALENDAR_FIELD_SHOW_MILESTONES_LABEL"
+    				description="MOD_JP_CALENDAR_FIELD_SHOW_MILESTONES_DESC"
+                >
+    				<option value="-1">JHIDE</option>
+    				<option value="1">JPUBLISHED</option>
+    				<option value="0">JUNPUBLISHED</option>
+    				<option value="2">JARCHIVED</option>
+    			</field>
+                <field name="filter_ms_complete" type="radio"
+    				class="btn-group"
+    				default="1"
+    				label="MOD_JP_CALENDAR_FIELD_FILTER_MS_COMPLETE_LABEL"
+    				description="MOD_JP_CALENDAR_FIELD_FILTER_MS_COMPLETE_DESC"
+                >
+    				<option value="0">JNO</option>
+    				<option value="1">JYES</option>
+    			</field>
+                <field name="ms_display" type="list"
+    				default="0"
+    				label="MOD_JP_CALENDAR_FIELD_MS_DISPLAY_LABEL"
+    				description="MOD_JP_CALENDAR_FIELD_MS_DISPLAY_DESC"
+                >
+    				<option value="0">MOD_JP_CALENDAR_OPTION_DISPLAY_DEADLINE</option>
+    				<option value="1">MOD_JP_CALENDAR_OPTION_DISPLAY_START_AND_DEADLINE</option>
+    				<option value="2">MOD_JP_CALENDAR_OPTION_DISPLAY_SPAN</option>
+    			</field>
+                <field name="show_tasks" type="list" multiple="true"
+    				default=""
+    				label="MOD_JP_CALENDAR_FIELD_SHOW_TASKS_LABEL"
+    				description="MOD_JP_CALENDAR_FIELD_SHOW_TASKS_DESC"
+                >
+    				<option value="-1">JHIDE</option>
+    				<option value="1">JPUBLISHED</option>
+    				<option value="0">JUNPUBLISHED</option>
+    				<option value="2">JARCHIVED</option>
+    			</field>
+                <field name="filter_t_complete" type="radio"
+    				class="btn-group"
+    				default="1"
+    				label="MOD_JP_CALENDAR_FIELD_FILTER_T_COMPLETE_LABEL"
+    				description="MOD_JP_CALENDAR_FIELD_FILTER_T_COMPLETE_DESC"
+                >
+    				<option value="0">JNO</option>
+    				<option value="1">JYES</option>
+    			</field>
+                <field name="filter_assigned" type="radio"
+    				class="btn-group"
+    				default="0"
+    				label="MOD_JP_CALENDAR_FIELD_FILTER_ASSIGNED_LABEL"
+    				description="MOD_JP_CALENDAR_FIELD_FILTER_ASSIGNED_DESC"
+                >
+    				<option value="0">JNO</option>
+    				<option value="1">JYES</option>
+    			</field>
+                <field name="task_display" type="list"
+    				default="0"
+    				label="MOD_JP_CALENDAR_FIELD_TASK_DISPLAY_LABEL"
+    				description="MOD_JP_CALENDAR_FIELD_TASK_DISPLAY_DESC"
+                >
+    				<option value="0">MOD_JP_CALENDAR_OPTION_DISPLAY_DEADLINE</option>
+    				<option value="1">MOD_JP_CALENDAR_OPTION_DISPLAY_START_AND_DEADLINE</option>
+    				<option value="2">MOD_JP_CALENDAR_OPTION_DISPLAY_SPAN</option>
+    			</field>
+            </fieldset>
+            <fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="0"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
