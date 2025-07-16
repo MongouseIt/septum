@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fieldset name="general" label="COM_JPPROJECTS_CONFIG_GENERAL_LABEL"
+              description="COM_JPPROJECTS_CONFIG_GENERAL_DESC">
+
+        <field
+                name="permissions_type" type="list" default="0"
+                label="COM_JPPROJECTS_CONFIG_PERMISSIONS_ACCESS_TYPE">
+            <option value="0">COM_JPPROJECTS_CONFIG_GROUPS</option>
+            <!--<option value="1">COM_JPPROJECTS_CONFIG_TEAMS_ROLES</option>-->
+        </field>
+
+        <field showon="permissions_type:0" name="create_group" class="btn-group" type="radio" default="0"
+               label="COM_JPPROJECTS_CONFIG_CREATE_GROUP_LABEL" description="COM_JPPROJECTS_CONFIG_CREATE_GROUP_DESC">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field showon="permissions_type:0" name="group_location" type="usergrouplist"
+               label="COM_JPPROJECTS_CONFIG_GROUP_LOCATION_LABEL"
+               description="COM_JPPROJECTS_CONFIG_GROUP_LOCATION_DESC"/>
+        <field name="project_color" type="color"
+               default="#ffffff"
+               description="COM_JPPROJECTS_CONFIG_PROJECT_COLOR_DESC"
+               label="COM_JPPROJECTS_CONFIG_PROJECT_COLOR_LABEL"
+        />
+    </fieldset>
+    <fieldset name="List" label="List">
+        <field type="spacer" class="" label="COM_JPPROJECTS_CONFIG_FIELDSET_ASSIGNED_USERS_LABEL"/>
+
+        <field
+                name="layoutType" type="list" default="0"
+                label="COM_JPPROJECTS_CONFIG_LAYOUT_TYPE_LABEL">
+            <option value="0">COM_JPPROJECTS_CONFIG_FIELD_OPTION_LIST</option>
+            <option value="1">COM_JPPROJECTS_CONFIG_FIELD_OPTION_TABLE</option>
+
+        </field>
+
+        <field type="spacer" class="" label="COM_JPPROJECTS_CONFIG_FIELDSET_ASSIGNED_USERS_LABEL"/>
+
+        <field name="userType" type="list" default="1" label="COM_JPPROJECTS_CONFIG_ASSIGNED_LABEL"
+               description="COM_JPPROJECTS_CONFIG_ASSIGNED_DESC" filter="integer">
+            <option value="0">COM_JPPROJECTS_CONFIG_FIELD_OPTION_PARTICIPANTS</option>
+            <option value="1">COM_JPPROJECTS_CONFIG_FIELD_OPTION_ASSIGNED</option>
+
+        </field>
+
+        <field name="numberUser"
+               type="number"
+               default="10"
+               label="COM_JPPROJECTS_CONFIG_ASSIGNED_NUMBER_LABEL"
+               description="COM_JPPROJECTS_CONFIG_ASSIGNED_NUMBER_DESC"
+        />
+
+    </fieldset>
+    <fieldset name="gallery" label="COM_JOOMPROJECT_CONFIG_GALLERY_LABEL" description="COM_JOOMPROJECT_CONFIG_GALLERY_DESC"
+              addfieldpath="administrator/components/com_joomproject/models/fields">
+
+        <fieldset name="globalConfig" label="Options">
+
+
+            <field name="enable_project_gallery"  layout="joomla.form.field.radio.switcher" type="radio" default="0"
+                   label="Enable Gallery Field (Experimental)" >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+
+            <field name="max_file_size" type="number"
+                   label="COM_JOOMPROJECT_MAX_FILE_SIZE"
+                   default="0"
+                   
+            />
+            <field name="limit_files" type="number"
+                   label="COM_JOOMPROJECT_GALLERY_LIMITE_FILE"
+                   default="0"
+                   
+            />
+            <field name="allowed_file_types" type="text"
+                   label="COM_JOOMPROJECT_ALLOWED_FILE_TYPE"
+                   default=".jpg, .jpeg, .png, .gif, .webp, image/webp"
+                   
+            />
+            <field name="original_image_resize_width" type="text"
+                   label="COM_JOOMPROJECT_ORIGINAL_IMAGE_RESIZE_WIDTH"
+                   default="300"
+                   
+            />
+            <field name="original_image_resize_hight" type="text"
+                   label="COM_JOOMPROJECT_ORIGINAL_IMAGE_RESIZE_HEIGHT"
+                   default="300"
+                   
+            />
+            <field name="thumb_height" type="text"
+                   label="COM_JOOMPROJECT_THUMB_HEIGHT"
+                   default=""
+                   
+            />
+            <field name="thumb_resize_method" type="list"
+                   label="COM_JOOMPROJECT_THUMB_RESIZE_METHOD"
+                   
+                   default="crop">
+                <option value="crop">Crop</option>
+                <option value="stretch">Stretch</option>
+                <option value="stretch">Fit</option>
+            </field>
+        </fieldset>
+
+
+        <fieldset name="uploadSetting" label="COM_JOOMPROJECT_GALLERY_UPLOAD_SETTINGS" >
+            <field name="upload_folder_type" type="radio"
+                   label="COM_JOOMPROJECT_FOLDER_TYPE"
+                   description="COM_JOOMPROJECT_FOLDER_TYPE_DESC"
+                   layout="joomla.form.field.radio.switcher"
+                   
+                   default="auto">
+                <option value="auto">COM_JOOMPROJECT_GALLERY_AUTO</option>
+                <option value="custom">COM_JOOMPROJECT_GALLERY_CUSTOM</option>
+            </field>
+            <field name="upload_folder" type="text"
+                   label="COM_JOOMPROJECT_UPLOAD_FOLDER"
+                   description="COM_JOOMPROJECT_UPLOAD_FOLDER_DESC"
+                   hint="media/com_joomproject/gallery"
+                   default="media/com_joomproject/gallery"
+                   showon="upload_folder_type:custom"
+            />
+            <field name="limit_files" type="number"
+                   label="COM_JOOMPROJECT_LIMIT_FILES"
+                   description="COM_JOOMPROJECT_LIMIT_FILES_DESC"
+                   class="input-small"
+                   default="0"
+                   hint="0"
+                   min="0"
+                   
+            />
+            <field name="max_file_size" type="number"
+                   label="COM_JOOMPROJECT_MAX_FILE_SIZE"
+                   description="COM_JOOMPROJECT_MAX_FILE_SIZE_DESC"
+                   min="0"
+                   default="0"
+            />
+        </fieldset>
+        <fieldset name="theme_params"
+                  label="COM_JOOMPROJECT_GALLERY_THEME">
+            <field
+                    name="style"
+                    type="list"
+                   label="COM_JOOMPROJECT_STYLE"
+                   description="COM_JOOMPROJECT_STYLE_DESC"
+                   default="grid"
+            >
+                <option value="grid">Grid</option>
+                <option value="masonry">Masonry</option>
+                <option value="justified">Justified</option>
+            </field>
+            <field name="devices_columns" type="NRResponsiveControl"
+                   label="COM_JOOMPROJECT_COLUMNS"
+                   description="COM_JOOMPROJECT_COLUMNS_DESC"
+                   showon="style:grid,masonry">
+                <subform>
+                    <field name="columns" type="number"
+                           class="input-small"
+                           default="3"
+                           hint="3"
+                           min="1"
+                           max="6"/>
+                </subform>
+            </field>
+            <field name="devices_gap" type="NRResponsiveControl"
+                   label="COM_JOOMPROJECT_GAP"
+                   description="COM_JOOMPROJECT_GAP_DESC">
+                <subform>
+                    <field name="gap" type="nrnumber"
+                           class="input-small"
+                           default="10"
+                           hint="10"
+                           addon="px"/>
+                </subform>
+            </field>
+            <field name="justified_item_height" type="nrnumber"
+                   label="COM_JOOMPROJECT_ROW_TARGET_HEIGHT"
+                   description="COM_JOOMPROJECT_JUSTIFIED_ITEM_HEIGHT_DESC"
+                   addon="px"
+                   min="1"
+                   hint="200"
+                   class="input-small"
+                   showon="style:zjustified"
+            />
+            <field name="ordering" type="list"
+                   label="COM_JOOMPROJECT_ORDERING"
+                   description="COM_JOOMPROJECT_ORDERING_DESC"
+                   default="default">
+                <option value="default">COM_JOOMPROJECT_DEFAULT</option>
+                <option value="alphabetical">COM_JOOMPROJECT_ALPHABETICAL</option>
+                <option value="reverse_alphabetical">COM_JOOMPROJECT_REVERSE_ALPHABETICAL</option>
+                <option value="random">COM_JOOMPROJECT_RANDOM</option>
+            </field>
+        </fieldset>
+
+        <fieldset name="label_orginial_image" label="COM_JOOMPROJECT_ORIGINAL_IMAGE">
+            <field name="original_image_resize" type="radio"
+                   label="JENABLED"
+                   description="COM_JOOMPROJECT_ORIGINAL_IMAGE_RESIZE_DESC"
+                   layout="joomla.form.field.radio.switcher"
+                   default="0"
+                   showon="style!:slideshow"
+            >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="original_image_resize_width" type="nrnumber"
+                   label="COM_JOOMPROJECT_ORIGINAL_IMAGE_WIDTH"
+                   description="COM_JOOMPROJECT_ORIGINAL_IMAGE_WIDTH_DESC"
+                   required="true"
+                   addon="px"
+                   hint="1920"
+                   default="1920"
+                   class="input-small"
+                   showon="original_image_resize:1"
+            />
+        </fieldset>
+
+        <fieldset name="label_thumbnails" label="COM_JOOMPROJECT_THUMBNAILS" showon="style:grid,masonry,slideshow">
+            <field name="thumb_width" type="nrnumber"
+                   label="COM_JOOMPROJECT_ITEM_WIDTH"
+                   description="COM_JOOMPROJECT_THUMB_WIDTH_DESC"
+                   addon="px"
+                   min="1"
+                   hint="300"
+                   default="300"
+                   class="input-small"
+                   showon="style:grid,masonry"
+            />
+            <field name="thumb_height" type="nrnumber"
+                   label="COM_JOOMPROJECT_ITEM_HEIGHT"
+                   description="COM_JOOMPROJECT_THUMB_HEIGHT_DESC"
+                   addon="px"
+                   min="1"
+                   hint="300"
+                   default="300"
+                   class="input-small"
+                   showon="style:grid"
+            />
+            <field name="resize_method" type="list"
+                   label="COM_JOOMPROJECT_IMAGE_RESIZE"
+                   description="COM_JOOMPROJECT_IMAGE_RESIZE_DESC"
+                   default="crop">
+                <option value="crop">COM_JOOMPROJECT_CROP</option>
+                <option value="stretch">COM_JOOMPROJECT_STRETCH</option>
+                <option value="fit">COM_JOOMPROJECT_FIT</option>
+            </field>
+        </fieldset>
+        <fieldset name="COM_JOOMPROJECT_LIGHTBOX" label="COM_JOOMPROJECT_LIGHTBOX">
+
+            <field name="lightbox" type="radio"
+                   label="JENABLED"
+                   description="COM_JOOMPROJECT_LIGHTBOX_DESC"
+                   default="1"
+                   layout="joomla.form.field.radio.switcher"
+                   showon="style!:slideshow"
+            >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+        </fieldset>
+
+        <fieldset name="watermark_label"
+                  label="COM_JOOMPROJECT_WATERMARK_IMAGES">
+            <fields name="watermark">
+                <field name="type" type="radio"
+                       label="COM_JOOMPROJECT_GALLERY_TYPE"
+                       description="COM_JOOMPROJECT_WATERMARK_TYPE_DESC"
+                       class="btn-group btn-group-yesno"
+                       default="disabled">
+                    <option value="disabled">JDISABLED</option>
+                    <option value="text">COM_JOOMPROJECT_GALLERY_TEXT</option>
+                    <option value="image">COM_JOOMPROJECT_GALLERY_IMAGE</option>
+                </field>
+                <field name="text_preset" type="list"
+                       label="COM_JOOMPROJECT_WATERMARK_TEXT_PRESET"
+                       description="COM_JOOMPROJECT_WATERMARK_TEXT_PRESET_DESC"
+                       showon="type:text"
+                       default="site_name">
+                    <option value="site_name">COM_JOOMPROJECT_SITE_NAME</option>
+                    <option value="site_url">COM_JOOMPROJECT_SITE_URL</option>
+                    <option value="custom">COM_JOOMPROJECT_GALLERY_CUSTOM</option>
+                </field>
+                <field name="text" type="text"
+                       label="COM_JOOMPROJECT_GALLERY_TEXT"
+                       description="COM_JOOMPROJECT_WATERMARK_TEXT_DESC"
+                       showon="type:text[AND]text_preset:custom"
+                />
+                <field name="color" type="color"
+                       label="COM_JOOMPROJECT_GALLERY_COLOR"
+                       description="COM_JOOMPROJECT_GALLERY_WATERMARK_TEXT_COLOR_DESC"
+                       position="bottom"
+                       default="#fff"
+                       showon="type:text"
+                />
+                <field name="size" type="number"
+                       class="tf-mw-500"
+                       label="COM_JOOMPROJECT_GALLERY_FONT_SIZE"
+                       description="COM_JOOMPROJECT_GALLERY_WATERMARK_FONT_SIZE_DESC"
+                       min="1"
+                       max="120"
+                       default="30"
+                       showon="type:text"
+                />
+                <field name="image" type="media"
+                       label="COM_JOOMPROJECT_GALLERY_IMAGE"
+                       description="COM_JOOMPROJECT_GALLERY_WATERMARK_IMAGE_DESC"
+                       showon="type:image"
+                />
+                <field name="position" type="list"
+                       label="COM_JOOMPROJECT_WATERMARK_POSITION"
+                       description="COM_JOOMPROJECT_WATERMARK_POSITION_DESC"
+                       showon="type!:disabled"
+                       default="bottom-right">
+                    <option value="top-left">COM_JOOMPROJECT_GALLERY_TOP_LEFT</option>
+                    <option value="top-center">COM_JOOMPROJECT_GALLERY_TOP_CENTER</option>
+                    <option value="top-right">COM_JOOMPROJECT_GALLERY_TOP_RIGHT</option>
+                    <option value="center-left">COM_JOOMPROJECT_GALLERY_MIDDLE_LEFT</option>
+                    <option value="center-center">COM_JOOMPROJECT_GALLERY_CENTER</option>
+                    <option value="center-right">COM_JOOMPROJECT_GALLERY_MIDDLE_RIGHT</option>
+                    <option value="bottom-left">COM_JOOMPROJECT_GALLERY_BOTTOM_LEFT</option>
+                    <option value="bottom-center">COM_JOOMPROJECT_GALLERY_BOTTOM_CENTER</option>
+                    <option value="bottom-right">COM_JOOMPROJECT_GALLERY_BOTTOM_RIGHT</option>
+                </field>
+                <field name="opacity" type="number"
+                       class="tf-mw-500"
+                       label="COM_JOOMPROJECT_GALLERY_WATERMARK_OPACITY"
+                       description="COM_JOOMPROJECT_GALLERY_WATERMARK_OPACITY_DESC"
+                       min="0"
+                       max="100"
+                       default="50"
+                       showon="type!:disabled"
+                />
+                <field name="angle" type="number"
+                       class="tf-mw-500"
+                       label="COM_JOOMPROJECT_GALLERY_WATERMARK_ROTATION"
+                       description="COM_JOOMPROJECT_GALLERY_WATERMARK_ROTATION_DESC"
+                       min="-360"
+                       max="360"
+                       default="0"
+                       showon="type!:disabled"
+                />
+                <field name="apply_on_thumbnails" type="radio"
+                       label="COM_JOOMPROJECT_WATERMARK_APPLY_ON_THUMBNAILS"
+                       description="COM_JOOMPROJECT_WATERMARK_APPLY_ON_THUMBNAILS_DESC"
+                       layout="joomla.form.field.radio.switcher"
+                       showon="type!:disabled"
+                       default="0"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+            </fields>
+        </fieldset>
+    </fieldset>
+    <fieldset name="permissions" label="JCONFIG_PERMISSIONS_LABEL" description="JCONFIG_PERMISSIONS_DESC">
+        <field name="rules" type="rules"
+               label="JCONFIG_PERMISSIONS_LABEL"
+               class="inputbox" validate="rules" filter="rules"
+               component="com_jpprojects" section="component"
+        />
+    </fieldset>
+</config>
