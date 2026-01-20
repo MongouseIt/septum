@@ -16,11 +16,47 @@ use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Router\Route;
 use Joomla\CMS\Component\ComponentHelper;
+use Joomla\CMS\Uri\Uri;
 
 /** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
 $wa = $this->document->getWebAssetManager();
 $wa->useScript('keepalive')
-    ->useScript('form.validate');
+    ->useScript('form.validate')
+	->useScript('jquery');
+
+$wa->registerScript(
+    'jquery-ui-cdn',
+    'https://ajax.googleapis.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js',
+    [],
+    ['defer' => true],
+    ['jquery']
+);
+$wa->useScript('jquery-ui-cdn');
+
+$wa->registerScript(
+    'filerobot',
+    'https://scaleflex.cloudimg.io/v7/plugins/filerobot-image-editor/latest/filerobot-image-editor.min.js',
+    [],
+    ['defer' => true],
+    ['jquery', 'jquery-ui-cdn']
+);
+$wa->useScript('filerobot');
+
+$wa->registerScript(
+    'modernizr-cdn',
+    '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js',
+    [],
+    ['defer' => true],
+    ['jquery', 'jquery-ui-cdn', 'filerobot']
+);
+$wa->useScript('modernizr-cdn');
+
+$wa->registerStyle(
+    'jquery-ui-theme',
+    'https://ajax.googleapis.com/ajax/libs/jqueryui/1.14.1/themes/smoothness/jquery-ui.css'
+);
+$wa->useStyle('jquery-ui-theme');
+
 HTMLHelper::_('bootstrap.tooltip');
 HTMLHelper::_('jphtml.script.form');
 $app = Factory::getApplication();
@@ -96,6 +132,15 @@ $user   = Factory::getApplication()->getIdentity();
             <div class="formelm form-group">
 				<?php echo $this->form->getInput('description'); ?>
             </div>
+
+			<div class="image-editor">
+				<h5>Képszerkesztő</h5>
+				<div id="editor_container"></div>
+				<?php
+				$mediapath = Uri::root(true) . '/media/filerobot/config.js';
+				?>
+				<script src="<?php echo $mediapath; ?>" type="text/javascript" defer></script>
+			</div>
         </fieldset>
 		<?php echo HTMLHelper::_('uitab.endTab'); ?>
 		<?php echo HTMLHelper::_('uitab.addTab', 'myTab', 'publishing', '<i class="fas fa-edit"></i> ' . Text::_('COM_JOOMPROJECT_FIELDSET_PUBLISHING')); ?>
@@ -239,3 +284,4 @@ $user   = Factory::getApplication()->getIdentity();
 		<?php echo HTMLHelper::_('form.token'); ?>
     </form>
 </div>
+
